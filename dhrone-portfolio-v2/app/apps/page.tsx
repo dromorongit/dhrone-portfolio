@@ -29,7 +29,7 @@ const apis = [
 
 export default function AppsPage() {
   return (
-    <div className="min-h-screen pt-24">
+    <div className="min-h-screen pt-24 animate-fade-in">
       <div className="container mx-auto px-6">
         <div className="mb-12">
           <p className="text-xs font-semibold text-violet uppercase tracking-widest mb-3">Software</p>
