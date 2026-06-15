@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { FiMenu, FiX, FiCode } from 'react-icons/fi'
+import { FiMenu, FiX } from 'react-icons/fi'
 import ThemeToggle from '@/components/ThemeToggle'
 
 const navLinks = [
@@ -40,8 +41,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-violet/20 flex items-center justify-center">
-              <FiCode size={14} className="text-violet" />
+            <div className="w-7 h-7 rounded-lg bg-violet/20 flex items-center justify-center overflow-hidden">
+              <Image src="/images/dromorlogo.jpg" alt="Dhrone Logo" fill className="object-cover" priority sizes="28px" />
             </div>
             <span className="text-base font-bold">
               <span className="text-gradient-violet">Dhrone</span>

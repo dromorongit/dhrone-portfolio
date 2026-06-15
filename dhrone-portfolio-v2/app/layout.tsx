@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   keywords: ['software engineer', 'web developer', 'app developer', 'video director', 'developer portfolio', 'Ghana developer', 'DhroneTech'],
   authors: [{ name: 'Narh H.P Dromor' }],
   metadataBase: new URL('https://dromornarh-production.up.railway.app'),
+  icons: {
+    icon: '/images/dromorlogo.jpg',
+  },
   openGraph: {
     title: 'Narh H.P Dromor | Software Engineer & Creative Technologist',
     description: 'Designing powerful software, modern digital platforms and cinematic visual experiences.',

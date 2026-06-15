@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { FiMail, FiPhone, FiMapPin, FiCode } from 'react-icons/fi'
+import Image from 'next/image'
+import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi'
 
 export default function Footer() {
   return (
@@ -9,8 +10,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-violet/20 flex items-center justify-center">
-                <FiCode size={16} className="text-violet" />
+              <div className="w-8 h-8 rounded-lg bg-violet/20 flex items-center justify-center overflow-hidden">
+                <Image src="/images/dromorlogo.jpg" alt="Dhrone Logo" fill className="object-cover" sizes="32px" />
               </div>
               <span className="text-xl font-bold">
                 <span className="text-gradient-violet">Dhrone</span>
