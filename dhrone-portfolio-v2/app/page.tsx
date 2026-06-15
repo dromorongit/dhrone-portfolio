@@ -11,50 +11,37 @@ export default function HomePage() {
   return (
     <div>
       {/* HERO */}
-      <section className="min-h-screen flex items-center relative overflow-hidden">
+      <section className="min-h-screen flex items-center relative overflow-hidden pt-24 pb-12">
         <div className="absolute top-1/4 -left-40 w-96 h-96 rounded-full bg-violet/10 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-1/4 -right-40 w-96 h-96 rounded-full bg-coral/10 blur-[120px] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-yellow/5 blur-[160px] pointer-events-none" />
+        <div className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-coral/10 blur-[100px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-yellow/5 blur-[120px] pointer-events-none" />
 
-        <div className="container mx-auto px-6 py-32 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 pill border border-violet/30 text-violet mb-8">
+              <div className="inline-flex items-center gap-2 pill border border-violet/30 text-violet mb-6 sm:mb-8">
                 <span className="w-2 h-2 rounded-full bg-violet animate-pulse-slow" />
                 Available for new projects
               </div>
-              <h1 className="text-5xl sm:text-6xl font-extrabold leading-[1.05] tracking-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-4 sm:mb-6">
                 <span style={{ color: 'var(--text-primary)' }}>I build </span>
                 <span className="text-gradient-violet">digital</span>
                 <br />
                 <span style={{ color: 'var(--text-primary)' }}>experiences</span>
                 <span className="text-coral">.</span>
               </h1>
-              <p className="text-lg max-w-xl leading-relaxed mb-10" style={{ color: 'var(--text-muted)' }}>
+              <p className="text-base sm:text-lg max-w-xl leading-relaxed mb-6 sm:mb-8">
                 Narh H.P Dromor — Software Engineer, App Developer & Creative Director based in{' '}
                 <span className="text-yellow font-medium">Accra, Ghana</span>.
                 I design and build powerful software, modern platforms, and cinematic visuals.
               </p>
-              <div className="flex flex-wrap gap-4 mb-14">
-                <Link href="/projects" className="btn-primary">View My Work <FiArrowRight size={16} /></Link>
-                <Link href="/contact" className="btn-outline">Get in Touch</Link>
-              </div>
-              <div className="flex flex-wrap gap-8">
-                {[
-                  { value: '50+', label: 'Projects' },
-                  { value: '30+', label: 'Clients' },
-                  { value: '5+', label: 'Years' },
-                  { value: '12+', label: 'Videos' },
-                ].map((s) => (
-                  <div key={s.label}>
-                    <p className="text-2xl font-bold text-gradient-violet">{s.value}</p>
-                    <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>{s.label}</p>
-                  </div>
-                ))}
+              <div className="flex flex-wrap gap-3 sm:gap-4 mb-8 sm:mb-12">
+                <Link href="/projects" className="btn-primary text-sm sm:text-base">View My Work <FiArrowRight size={15} /></Link>
+                <Link href="/contact" className="btn-outline text-sm sm:text-base">Get in Touch</Link>
               </div>
             </div>
 
-            <div className="flex justify-end relative mt-12 lg:mt-0">
+            <div className="flex justify-center lg:justify-end">
               <div className="relative w-40 h-48 max-w-full">
                 <div className="absolute -inset-2 rounded-3xl bg-violet/10 blur-2xl" />
                 <div className="absolute inset-0 rounded-2xl border border-coral/20 translate-x-2 translate-y-2" />
