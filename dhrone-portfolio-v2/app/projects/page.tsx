@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { FiArrowRight } from 'react-icons/fi'
 import { projects } from '@/app/data/projects'
 import PageWrapper from '@/components/PageWrapper'
 
@@ -64,7 +64,7 @@ export default function ProjectsPage() {
                 </div>
                 <div className="flex items-center gap-1 text-xs font-medium transition-colors"
                   style={{ color: project.accentColor }}>
-                  View Project <ArrowRight size={13} />
+                  View Project <FiArrowRight size={13} />
                 </div>
               </Link>
             ))}

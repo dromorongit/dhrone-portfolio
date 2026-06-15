@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Code, Smartphone, Video, ArrowRight, MapPin, Calendar } from 'lucide-react'
+import { FiCode, FiSmartphone, FiVideo, FiArrowRight, FiMapPin, FiCalendar } from 'react-icons/fi'
 
 const timeline = [
   { year: '2020', title: 'Video Editing Beginnings', desc: 'Started with basic video editing and slideshow production.' },
@@ -13,9 +13,9 @@ const timeline = [
 ]
 
 const skills = [
-  { icon: Code, color: 'text-violet', bg: 'bg-violet/10', accent: '#6C63FF', title: 'Software Engineering', items: ['Web Applications', 'Backend Systems', 'API Development', 'Database Architecture'] },
-  { icon: Smartphone, color: 'text-coral', bg: 'bg-coral/10', accent: '#FF6B6B', title: 'App Development', items: ['Mobile Applications', 'Desktop Applications', 'SaaS Platforms', 'Cross-platform Apps'] },
-  { icon: Video, color: 'text-yellow', bg: 'bg-yellow/10', accent: '#FFD93D', title: 'Creative Production', items: ['Video Directing', 'Video Editing', 'Commercial Production', 'Visual Effects'] },
+  { icon: FiCode, color: 'text-violet', bg: 'bg-violet/10', accent: '#6C63FF', title: 'Software Engineering', items: ['Web Applications', 'Backend Systems', 'API Development', 'Database Architecture'] },
+  { icon: FiSmartphone, color: 'text-coral', bg: 'bg-coral/10', accent: '#FF6B6B', title: 'App Development', items: ['Mobile Applications', 'Desktop Applications', 'SaaS Platforms', 'Cross-platform Apps'] },
+  { icon: FiVideo, color: 'text-yellow', bg: 'bg-yellow/10', accent: '#FFD93D', title: 'Creative Production', items: ['Video Directing', 'Video Editing', 'Commercial Production', 'Visual Effects'] },
 ]
 
 export default function AboutPage() {
@@ -42,14 +42,14 @@ export default function AboutPage() {
             </p>
             <div className="flex flex-wrap gap-3 mb-8">
               <span className="flex items-center gap-1.5 pill border border-violet/20 text-violet text-xs">
-                <MapPin size={12} /> Accra, Ghana
+                <FiMapPin size={12} /> Accra, Ghana
               </span>
               <span className="flex items-center gap-1.5 pill border border-coral/20 text-coral text-xs">
-                <Calendar size={12} /> 5+ Years Experience
+                <FiCalendar size={12} /> 5+ Years Experience
               </span>
             </div>
             <Link href="/contact" className="btn-primary inline-flex">
-              Work With Me <ArrowRight size={16} />
+              Work With Me <FiArrowRight size={16} />
             </Link>
           </div>
 
@@ -163,7 +163,7 @@ export default function AboutPage() {
           <h2 className="text-2xl font-bold text-textPrimary mb-3 relative z-10">Want to work together?</h2>
           <p className="text-textMuted mb-6 relative z-10">I&apos;m always open to exciting new projects and opportunities.</p>
           <Link href="/contact" className="btn-primary inline-flex relative z-10">
-            Get in Touch <ArrowRight size={16} />
+            Get in Touch <FiArrowRight size={16} />
           </Link>
         </div>
 

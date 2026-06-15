@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { ArrowLeft, ExternalLink, Calendar, User, Tag } from 'lucide-react'
+import { FiArrowLeft, FiExternalLink, FiCalendar, FiUser, FiTag } from 'react-icons/fi'
 import { projects, getProjectBySlug } from '@/app/data/projects'
 
 export async function generateStaticParams() {
@@ -16,7 +16,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
       <div className="container mx-auto px-6">
         {/* Back */}
         <Link href="/projects" className="inline-flex items-center gap-2 text-sm text-textMuted hover:text-textPrimary transition-colors mb-10">
-          <ArrowLeft size={16} /> Back to Projects
+          <FiArrowLeft size={16} /> Back to Projects
         </Link>
 
         {/* Accent line */}
@@ -31,16 +31,16 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
             {project.websiteUrl !== '#' && (
               <a href={project.websiteUrl} target="_blank" rel="noopener noreferrer"
                 className="btn-primary inline-flex">
-                Visit Website <ExternalLink size={15} />
+                Visit Website <FiExternalLink size={15} />
               </a>
             )}
           </div>
 
           <div className="space-y-4">
             {[
-              { icon: User, label: 'Client', value: project.client },
-              { icon: Tag, label: 'Role', value: project.role },
-              { icon: Calendar, label: 'Year', value: project.year },
+{ icon: FiUser, label: 'Client', value: project.client },
+               { icon: FiTag, label: 'Role', value: project.role },
+               { icon: FiCalendar, label: 'Year', value: project.year },
             ].map((item) => (
               <div key={item.label} className="card p-4 flex items-start gap-4">
                 <div className="w-9 h-9 rounded-lg bg-violet/10 flex items-center justify-center shrink-0">
@@ -70,11 +70,11 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
         {/* Nav */}
         <div className="flex justify-between border-t border-border pt-8 mb-20">
           <Link href="/projects" className="btn-outline text-sm">
-            <ArrowLeft size={15} /> All Projects
+            <FiArrowLeft size={15} /> All Projects
           </Link>
           {project.websiteUrl !== '#' && (
             <a href={project.websiteUrl} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm">
-              Live Site <ExternalLink size={15} />
+              Live Site <FiExternalLink size={15} />
             </a>
           )}
         </div>

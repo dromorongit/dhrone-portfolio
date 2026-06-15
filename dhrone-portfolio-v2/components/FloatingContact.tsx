@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { MessageCircle } from 'lucide-react'
+import { FiMessageCircle } from 'react-icons/fi'
 
 export default function FloatingContact() {
   return (
@@ -9,7 +9,7 @@ export default function FloatingContact() {
       style={{ background: 'linear-gradient(135deg, #6C63FF, #FF6B6B)' }}
       aria-label="Contact me"
     >
-      <MessageCircle size={18} />
+      <FiMessageCircle size={18} />
       <span className="hidden sm:inline">Let&apos;s Talk</span>
     </Link>
   )

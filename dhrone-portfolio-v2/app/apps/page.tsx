@@ -1,15 +1,15 @@
-import { Package, ShoppingCart, Database } from 'lucide-react'
+import { FiPackage, FiShoppingCart, FiDatabase } from 'react-icons/fi'
 
 const desktopApps = [
   {
-    icon: Package,
+    icon: FiPackage,
     color: '#6C63FF',
     title: 'Inventory Management System',
     desc: 'A comprehensive business inventory and stock tracking system for monitoring products, stock levels and business operations.',
     features: ['Product Management', 'Stock Tracking', 'Low Stock Alerts', 'Sales Reporting', 'Multi-user Access'],
   },
   {
-    icon: ShoppingCart,
+    icon: FiShoppingCart,
     color: '#FF6B6B',
     title: 'Dhrone Tech POS System',
     desc: 'A retail point of sale platform with inventory management, sales analytics and transaction management.',
@@ -19,7 +19,7 @@ const desktopApps = [
 
 const apis = [
   {
-    icon: Database,
+    icon: FiDatabase,
     color: '#FFD93D',
     title: 'Task Manager RESTful API',
     desc: 'A secure REST API with authentication, CRUD operations and protected routes for task management.',

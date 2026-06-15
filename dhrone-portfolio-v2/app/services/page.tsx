@@ -1,13 +1,13 @@
 import Link from 'next/link'
-import { Globe, Smartphone, Code2, Monitor, Palette, Video, ArrowRight } from 'lucide-react'
+import { FiGlobe, FiSmartphone, FiCode, FiMonitor, FiPenTool, FiVideo, FiArrowRight } from 'react-icons/fi'
 
 const services = [
-  { icon: Code2, color: 'text-violet', bg: 'bg-violet/10', title: 'Software Development', desc: 'Custom software solutions tailored to your business needs. From concept to deployment.', features: ['Custom Applications', 'System Architecture', 'Performance Optimization', 'Maintenance & Support'] },
-  { icon: Globe, color: 'text-coral', bg: 'bg-coral/10', title: 'Web Development', desc: 'Modern, responsive websites and web applications built with cutting-edge technologies.', features: ['Responsive Design', 'E-commerce Solutions', 'CMS Development', 'SEO Optimization'] },
-  { icon: Smartphone, color: 'text-yellow', bg: 'bg-yellow/10', title: 'Mobile App Development', desc: 'Native and cross-platform mobile applications for iOS and Android devices.', features: ['iOS Development', 'Android Development', 'Cross-platform Apps', 'App Store Deployment'] },
-  { icon: Monitor, color: 'text-violet', bg: 'bg-violet/10', title: 'Desktop Applications', desc: 'Powerful desktop applications for Windows and macOS platforms.', features: ['Windows Apps', 'macOS Apps', 'Cross-platform Solutions', 'System Integration'] },
-  { icon: Palette, color: 'text-coral', bg: 'bg-coral/10', title: 'UI/UX Design', desc: 'User-centered design that combines aesthetics with functionality.', features: ['User Research', 'Wireframing', 'Prototyping', 'Design Systems'] },
-  { icon: Video, color: 'text-yellow', bg: 'bg-yellow/10', title: 'Video Production', desc: 'Professional video content creation from concept to final delivery.', features: ['Music Videos', 'Commercials', 'Documentaries', 'Event Coverage'] },
+  { icon: FiCode, color: 'text-violet', bg: 'bg-violet/10', title: 'Software Development', desc: 'Custom software solutions tailored to your business needs. From concept to deployment.', features: ['Custom Applications', 'System Architecture', 'Performance Optimization', 'Maintenance & Support'] },
+  { icon: FiGlobe, color: 'text-coral', bg: 'bg-coral/10', title: 'Web Development', desc: 'Modern, responsive websites and web applications built with cutting-edge technologies.', features: ['Responsive Design', 'E-commerce Solutions', 'CMS Development', 'SEO Optimization'] },
+  { icon: FiSmartphone, color: 'text-yellow', bg: 'bg-yellow/10', title: 'Mobile App Development', desc: 'Native and cross-platform mobile applications for iOS and Android devices.', features: ['iOS Development', 'Android Development', 'Cross-platform Apps', 'App Store Deployment'] },
+  { icon: FiMonitor, color: 'text-violet', bg: 'bg-violet/10', title: 'Desktop Applications', desc: 'Powerful desktop applications for Windows and macOS platforms.', features: ['Windows Apps', 'macOS Apps', 'Cross-platform Solutions', 'System Integration'] },
+  { icon: FiPenTool, color: 'text-coral', bg: 'bg-coral/10', title: 'UI/UX Design', desc: 'User-centered design that combines aesthetics with functionality.', features: ['User Research', 'Wireframing', 'Prototyping', 'Design Systems'] },
+  { icon: FiVideo, color: 'text-yellow', bg: 'bg-yellow/10', title: 'Video Production', desc: 'Professional video content creation from concept to final delivery.', features: ['Music Videos', 'Commercials', 'Documentaries', 'Event Coverage'] },
 ]
 
 const process = [
@@ -70,7 +70,7 @@ export default function ServicesPage() {
           <h2 className="text-2xl font-bold text-textPrimary mb-3">Ready to start your project?</h2>
           <p className="text-textMuted mb-6">Let&apos;s discuss your project and see how I can help bring your ideas to life.</p>
           <Link href="/contact" className="btn-primary inline-flex">
-            Get in Touch <ArrowRight size={16} />
+            Get in Touch <FiArrowRight size={16} />
           </Link>
         </div>
       </div>

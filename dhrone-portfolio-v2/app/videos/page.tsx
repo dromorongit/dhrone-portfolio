@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Play, Music, Tv, Film, Clock, X } from 'lucide-react'
+import { FiPlay, FiMusic, FiTv, FiFilm, FiClock, FiX } from 'react-icons/fi'
 import { videos, Video } from '@/app/data/videos'
 import PageWrapper from '@/components/PageWrapper'
 
@@ -12,9 +12,9 @@ export default function VideosPage() {
   const filtered = activeCategory === 'all' ? videos : videos.filter((v) => v.category === activeCategory)
 
   const categories = [
-    { id: 'all', label: 'All Videos', icon: Film },
-    { id: 'music', label: 'Music Videos', icon: Music },
-    { id: 'commercial', label: 'Commercials', icon: Tv },
+    { id: 'all', label: 'All Videos', icon: FiFilm },
+    { id: 'music', label: 'Music Videos', icon: FiMusic },
+    { id: 'commercial', label: 'Commercials', icon: FiTv },
   ]
 
   const catColor = (cat: string) => cat === 'music' ? '#6C63FF' : '#FF6B6B'
@@ -54,7 +54,7 @@ export default function VideosPage() {
                   style={{ background: `linear-gradient(135deg, ${catColor(video.category)}20, ${catColor(video.category)}08)`, border: `1px solid ${catColor(video.category)}20` }}>
                   <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-transform duration-200 group-hover:scale-110`}
                     style={{ backgroundColor: `${catColor(video.category)}30` }}>
-                    <Play size={22} style={{ color: catColor(video.category) }} className="ml-0.5" />
+                    <FiPlay size={22} style={{ color: catColor(video.category) }} className="ml-0.5" />
                   </div>
                   <div className="absolute top-3 right-3">
                     <span className="pill text-xs" style={{ color: catColor(video.category) }}>
@@ -67,7 +67,7 @@ export default function VideosPage() {
                 <div className="flex items-center justify-between text-xs text-textMuted">
                   <span>{video.client}</span>
                   <div className="flex items-center gap-1">
-                    <Clock size={12} /> {video.duration}
+                    <FiClock size={12} /> {video.duration}
                   </div>
                 </div>
                 <div className="text-xs text-textMuted mt-1">{video.year}</div>
@@ -83,7 +83,7 @@ export default function VideosPage() {
             <div className="relative w-full max-w-4xl" onClick={(e) => e.stopPropagation()}>
               <button onClick={() => setSelected(null)}
                 className="absolute -top-12 right-0 p-2 text-white/60 hover:text-white transition-colors">
-                <X size={28} />
+                <FiX size={28} />
               </button>
               <video src={`/videos/${selected.videoFile}`} controls autoPlay
                 className="w-full rounded-xl" />

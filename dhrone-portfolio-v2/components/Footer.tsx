@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Mail, Phone, MapPin, Code2 } from 'lucide-react'
+import { FiMail, FiPhone, FiMapPin, FiCode } from 'react-icons/fi'
 
 export default function Footer() {
   return (
@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 rounded-lg bg-violet/20 flex items-center justify-center">
-                <Code2 size={16} className="text-violet" />
+                <FiCode size={16} className="text-violet" />
               </div>
               <span className="text-xl font-bold">
                 <span className="text-gradient-violet">Dhrone</span>
@@ -45,16 +45,16 @@ export default function Footer() {
             <div className="space-y-3">
               <a href="mailto:iamdhrone@gmail.com"
                 className="flex items-center gap-2.5 text-sm text-textMuted hover:text-textPrimary transition-colors">
-                <Mail size={14} className="text-violet shrink-0" />
+                <FiMail size={14} className="text-violet shrink-0" />
                 iamdhrone@gmail.com
               </a>
               <a href="tel:+233538284952"
                 className="flex items-center gap-2.5 text-sm text-textMuted hover:text-textPrimary transition-colors">
-                <Phone size={14} className="text-coral shrink-0" />
+                <FiPhone size={14} className="text-coral shrink-0" />
                 +233 53 828 4952
               </a>
               <div className="flex items-start gap-2.5 text-sm text-textMuted">
-                <MapPin size={14} className="text-yellow shrink-0 mt-0.5" />
+                <FiMapPin size={14} className="text-yellow shrink-0 mt-0.5" />
                 Dhrone Creative Gallery,<br />Santa Maria, Accra, Ghana
               </div>
             </div>

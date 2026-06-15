@@ -4,6 +4,24 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg: #0A0A0F;
+  --surface: #111118;
+  --surface-hover: #1A1A26;
+  --border: #1E1E2E;
+  --text-primary: #F5F5F5;
+  --text-muted: #A0A0B0;
+}
+
+[data-theme='light'] {
+  --bg: #F8F8FC;
+  --surface: #FFFFFF;
+  --surface-hover: #F0F0F8;
+  --border: #E2E2EE;
+  --text-primary: #0A0A0F;
+  --text-muted: #60607A;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,10 +33,11 @@ html {
 }
 
 body {
-  background-color: #0A0A0F;
-  color: #F5F5F5;
+  background-color: var(--bg);
+  color: var(--text-primary);
   font-family: 'Plus Jakarta Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
@@ -29,9 +48,11 @@ body {
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
-  background: #0A0A0F;
+  background: var(--bg);
 }
+
 ::-webkit-scrollbar-thumb {
   background: #6C63FF;
   border-radius: 3px;
@@ -51,8 +72,8 @@ body {
     background-clip: text;
   }
   .card {
-    background-color: #111118;
-    border: 1px solid #1E1E2E;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
     border-radius: 16px;
     transition: border-color 0.2s ease, transform 0.2s ease;
   }
@@ -67,8 +88,8 @@ body {
     border-radius: 9999px;
     font-size: 12px;
     font-weight: 500;
-    background-color: #1A1A26;
-    color: #A0A0B0;
+    background-color: var(--surface-hover);
+    color: var(--text-muted);
   }
   .btn-primary {
     display: inline-flex;
@@ -97,8 +118,8 @@ body {
     font-weight: 600;
     font-size: 14px;
     background: transparent;
-    color: #F5F5F5;
-    border: 1px solid #1E1E2E;
+    color: var(--text-primary);
+    border: 1px solid var(--border);
     transition: border-color 0.2s ease, transform 0.2s ease;
     cursor: pointer;
   }
@@ -114,9 +135,6 @@ body {
     margin: 0 auto;
     padding: 0 24px;
   }
-  .noise {
-    position: relative;
-  }
   .noise::before {
     content: '';
     position: absolute;
@@ -127,11 +145,18 @@ body {
     z-index: 1;
   }
   .animate-fade-in {
-    animation: fadeIn 0.5s ease-out forwards;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
   }
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
   }
 }
 
@@ -148,4 +173,10 @@ body {
 
 .marquee-track:hover {
   animation-play-state: paused;
+}
+
+/* Pulse slow */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }
