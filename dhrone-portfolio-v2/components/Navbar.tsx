@@ -42,7 +42,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <div className="w-7 h-7 rounded-lg bg-violet/20 flex items-center justify-center overflow-hidden">
-              <Image src="/images/dromorlogo.jpg" alt="Dhrone Logo" fill className="object-cover" priority sizes="28px" />
+              <Image src="/images/dromorlogo.jpg" alt="Dhrone Logo" fill className="object-contain" priority sizes="28px" />
             </div>
             <span className="text-base font-bold">
               <span className="text-gradient-violet">Dhrone</span>
