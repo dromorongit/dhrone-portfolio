@@ -11,10 +11,9 @@ export default function AnimatedCounter({ value, duration = 2000 }: AnimatedCoun
   const [count, setCount] = useState(0)
 
   useEffect(() => {
-    const numericValue = parseInt(value.replace('+', ''))
+    let numericValue = parseInt(value.replace('+', '').replace('%', ''))
     if (isNaN(numericValue)) {
-      setCount(0)
-      return
+      numericValue = 0
     }
 
     let startTime: number
@@ -33,7 +32,12 @@ export default function AnimatedCounter({ value, duration = 2000 }: AnimatedCoun
     return () => cancelAnimationFrame(animationFrame)
   }, [value, duration])
 
-  const displayValue = value.includes('+') ? `${count}+` : `${count}%`
+  if (value.includes('%')) {
+    return <span>{count}%</span>
+  }
+  if (value.includes('+')) {
+    return <span>{count}+</span>
+  }
   
-  return <span>{displayValue}</span>
+  return <span>{count}</span>
 }

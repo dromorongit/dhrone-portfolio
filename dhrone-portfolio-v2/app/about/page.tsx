@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { FiCode, FiSmartphone, FiVideo, FiArrowRight, FiMapPin, FiCalendar } from 'react-icons/fi'
+import AnimatedCounter from '@/components/AnimatedCounter'
 
 const timeline = [
   { year: '2020', title: 'Video Editing Beginnings', desc: 'Started with basic video editing and slideshow production.' },
@@ -93,18 +94,18 @@ export default function AboutPage() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
-          {[
-            { value: '50+', label: 'Projects Completed', color: '#6C63FF' },
-            { value: '30+', label: 'Happy Clients', color: '#FF6B6B' },
-            { value: '5+', label: 'Years Experience', color: '#FFD93D' },
-            { value: '100%', label: 'Satisfaction Rate', color: '#6C63FF' },
-          ].map((s) => (
-            <div key={s.label} className="card p-6 text-center group hover:border-violet/30">
-              <p className="text-3xl font-extrabold mb-1" style={{ color: s.color }}>{s.value}</p>
-              <p className="text-xs text-textMuted">{s.label}</p>
-            </div>
-          ))}
+<div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
+{[
+             { value: '50+', label: 'Projects Completed', color: '#6C63FF' },
+             { value: '30+', label: 'Happy Clients', color: '#FF6B6B' },
+             { value: '5+', label: 'Years Experience', color: '#FFD93D' },
+             { value: '100%', label: 'Satisfaction Rate', color: '#6C63FF' },
+           ].map((s) => (
+             <div key={s.label} className="card p-6 text-center group hover:border-violet/30">
+               <p className="text-3xl font-extrabold mb-1" style={{ color: s.color }}><AnimatedCounter value={s.value} /></p>
+               <p className="text-xs text-textMuted">{s.label}</p>
+             </div>
+           ))}
         </div>
 
         {/* Skills */}
