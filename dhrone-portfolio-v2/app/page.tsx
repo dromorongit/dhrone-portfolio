@@ -55,11 +55,11 @@ export default function HomePage() {
             </div>
 
             <div className="flex justify-center lg:justify-end">
-              <div className="relative w-48 h-56 max-w-full">
+              <div className="relative w-56 h-64 max-w-full">
                 <div className="absolute -inset-3 rounded-3xl bg-violet/10 blur-2xl" />
                 <div className="absolute inset-0 rounded-2xl border border-coral/20 translate-x-3 translate-y-3" />
                 <div className="relative w-full h-full rounded-2xl overflow-hidden border border-[var(--border)]">
-                  <Image src="/images/dhrone.jpg" alt="Narh H.P Dromor" fill className="object-cover" priority sizes="(max-width: 768px) 192px, 192px" />
+                  <Image src="/images/dhrone.jpg" alt="Narh H.P Dromor" fill className="object-cover" priority sizes="(max-width: 768px) 224px, 224px" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)]/50 via-transparent to-transparent" />
                 </div>
                 <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 rounded-full px-4 py-2 shadow-xl whitespace-nowrap"
