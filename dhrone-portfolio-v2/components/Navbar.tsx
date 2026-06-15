@@ -41,7 +41,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-violet/20 flex items-center justify-center overflow-hidden">
+            <div className="w-7 h-7 rounded-lg bg-violet/20 flex items-center justify-center overflow-hidden relative">
               <Image src="/images/dromorlogo.jpg" alt="Dhrone Logo" fill className="object-contain" priority sizes="28px" />
             </div>
             <span className="text-base font-bold">

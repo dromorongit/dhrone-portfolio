@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-violet/20 flex items-center justify-center overflow-hidden">
+              <div className="w-8 h-8 rounded-lg bg-violet/20 flex items-center justify-center overflow-hidden relative">
                 <Image src="/images/dromorlogo.jpg" alt="Dhrone Logo" fill className="object-contain" sizes="32px" />
               </div>
               <span className="text-xl font-bold">
