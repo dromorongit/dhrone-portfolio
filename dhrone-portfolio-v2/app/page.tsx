@@ -4,6 +4,7 @@ import { FiArrowRight, FiGlobe, FiSmartphone, FiCode, FiVideo, FiStar } from 're
 import { featuredProjects } from '@/app/data/projects'
 import GitHubStats from '@/components/GitHubStats'
 import Testimonials from '@/components/Testimonials'
+import AnimatedCounter from '@/components/AnimatedCounter'
 
 const techMarquee = ['Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL', 'MongoDB', 'Tailwind CSS', 'Electron', 'React Native', 'Prisma', 'Redis', 'AWS', 'Express', 'GraphQL', 'SQLite', 'Docker']
 
@@ -47,7 +48,7 @@ export default function HomePage() {
                   { value: '12+', label: 'Videos' },
                 ].map((s) => (
                   <div key={s.label}>
-                    <p className="text-xl sm:text-2xl font-bold text-gradient-violet">{s.value}</p>
+                    <p className="text-xl sm:text-2xl font-bold text-gradient-violet"><AnimatedCounter value={s.value} /></p>
                     <p className="text-2xs sm:text-xs mt-1" style={{ color: 'var(--text-muted)' }}>{s.label}</p>
                   </div>
                 ))}
