@@ -35,23 +35,36 @@ export default function HomePage() {
                 <span className="text-yellow font-medium">Accra, Ghana</span>.
                 I design and build powerful software, modern platforms, and cinematic visuals.
               </p>
-              <div className="flex flex-wrap gap-3 sm:gap-4 mb-8 sm:mb-12">
+              <div className="flex flex-wrap gap-4 mb-14">
                 <Link href="/projects" className="btn-primary text-sm sm:text-base">View My Work <FiArrowRight size={15} /></Link>
                 <Link href="/contact" className="btn-outline text-sm sm:text-base">Get in Touch</Link>
+              </div>
+              <div className="flex flex-wrap gap-6 sm:gap-8 mb-16">
+                {[
+                  { value: '50+', label: 'Projects' },
+                  { value: '30+', label: 'Clients' },
+                  { value: '5+', label: 'Years' },
+                  { value: '12+', label: 'Videos' },
+                ].map((s) => (
+                  <div key={s.label}>
+                    <p className="text-xl sm:text-2xl font-bold text-gradient-violet">{s.value}</p>
+                    <p className="text-2xs sm:text-xs mt-1" style={{ color: 'var(--text-muted)' }}>{s.label}</p>
+                  </div>
+                ))}
               </div>
             </div>
 
             <div className="flex justify-center lg:justify-end">
-              <div className="relative w-40 h-48 max-w-full">
-                <div className="absolute -inset-2 rounded-3xl bg-violet/10 blur-2xl" />
-                <div className="absolute inset-0 rounded-2xl border border-coral/20 translate-x-2 translate-y-2" />
+              <div className="relative w-48 h-56 max-w-full">
+                <div className="absolute -inset-3 rounded-3xl bg-violet/10 blur-2xl" />
+                <div className="absolute inset-0 rounded-2xl border border-coral/20 translate-x-3 translate-y-3" />
                 <div className="relative w-full h-full rounded-2xl overflow-hidden border border-[var(--border)]">
-                  <Image src="/images/dhrone.jpg" alt="Narh H.P Dromor" fill className="object-cover" priority sizes="(max-width: 768px) 160px, 160px" />
+                  <Image src="/images/dhrone.jpg" alt="Narh H.P Dromor" fill className="object-cover" priority sizes="(max-width: 768px) 192px, 192px" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)]/50 via-transparent to-transparent" />
                 </div>
-                <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 rounded-full px-3 py-1.5 shadow-xl whitespace-nowrap"
+                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 rounded-full px-4 py-2 shadow-xl whitespace-nowrap"
                   style={{ backgroundColor: 'var(--surface)', border: '1px solid var(--border)' }}>
-                  <span className="text-xs font-semibold" style={{ color: 'var(--text-primary)', fontSize: '0.65rem' }}>
+                  <span className="text-xs font-semibold" style={{ color: 'var(--text-primary)' }}>
                     Software Engineer <span className="text-violet">·</span> Creative Director
                   </span>
                 </div>
