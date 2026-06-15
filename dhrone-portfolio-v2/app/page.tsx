@@ -55,16 +55,16 @@ export default function HomePage() {
             </div>
 
             <div className="flex justify-end relative mt-12 lg:mt-0">
-              <div className="relative w-80 h-96 max-w-full">
-                <div className="absolute -inset-4 rounded-3xl bg-violet/10 blur-2xl" />
-                <div className="absolute inset-0 rounded-2xl border border-coral/20 translate-x-4 translate-y-4" />
+              <div className="relative w-40 h-48 max-w-full">
+                <div className="absolute -inset-2 rounded-3xl bg-violet/10 blur-2xl" />
+                <div className="absolute inset-0 rounded-2xl border border-coral/20 translate-x-2 translate-y-2" />
                 <div className="relative w-full h-full rounded-2xl overflow-hidden border border-[var(--border)]">
-                  <Image src="/images/dhrone.jpg" alt="Narh H.P Dromor" fill className="object-cover" priority sizes="(max-width: 768px) 288px, 320px" />
+                  <Image src="/images/dhrone.jpg" alt="Narh H.P Dromor" fill className="object-cover" priority sizes="(max-width: 768px) 160px, 160px" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)]/50 via-transparent to-transparent" />
                 </div>
-                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 rounded-full px-5 py-2.5 shadow-xl whitespace-nowrap"
+                <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 rounded-full px-3 py-1.5 shadow-xl whitespace-nowrap"
                   style={{ backgroundColor: 'var(--surface)', border: '1px solid var(--border)' }}>
-                  <span className="text-xs font-semibold" style={{ color: 'var(--text-primary)' }}>
+                  <span className="text-xs font-semibold" style={{ color: 'var(--text-primary)', fontSize: '0.65rem' }}>
                     Software Engineer <span className="text-violet">·</span> Creative Director
                   </span>
                 </div>
