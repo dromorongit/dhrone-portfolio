@@ -1,0 +1,35 @@
+---
+title: "Building E-Commerce Platforms That Actually Work for the Ghanaian Market"
+date: "2026-04-02"
+excerpt: "Lessons learned building multi-vendor platforms, payment flows, and checkout experiences tailored to local infrastructure realities."
+tags: ["E-commerce", "Engineering"]
+accentColor: "#FF6B6B"
+readTime: "7 min read"
+---
+
+## Mobile money first, cards second
+
+Most e-commerce tutorials assume a Stripe checkout and a Visa card. That assumption breaks the moment you build for the Ghanaian market. Mobile money — MTN, AirtelTigo, Telecel — isn't a secondary payment option here; it's the primary one for a huge share of customers. Any checkout flow that treats it as an afterthought is going to lose sales.
+
+The practical takeaway: design your payment step around mobile money as the default path, with card payment as the alternative, not the other way around.
+
+## Designing for unreliable connections
+
+Data costs and connection stability are real product constraints, not edge cases. A few patterns that consistently help:
+
+- Aggressive image optimization and lazy loading — every unnecessary kilobyte costs the customer money
+- Optimistic UI updates so actions feel instant even on a slow connection
+- Clear retry states instead of silent failures when a request times out
+- Avoiding chatty client-server round trips; batching requests where possible
+
+## Currency, trust, and local signals
+
+Displaying prices in GHS (₵) by default, not as a converted afterthought, matters more than it seems. Customers trust platforms that speak their currency and reference familiar local details — delivery zones, recognizable payment logos, and local contact numbers all build the kind of trust that a generic template doesn't.
+
+## Power outages are a frontend concern too
+
+"Dumsor" — Ghana's periodic power outages — sounds like an infrastructure problem until you realize it directly affects in-store POS systems, checkout completion rates, and even how long a customer's session survives before their device dies. Building resilience into save states, draft carts, and offline-tolerant forms isn't over-engineering here; it's a real-world requirement.
+
+## What I'd tell a founder building for Ghana today
+
+Start with the payment method your actual customers use, not the one that's easiest to integrate. Design for the connection speed your customers actually have, not the one your office wifi gives you. And treat local context — currency, language, payment habits — as a first-class product feature, not a checkbox at the end of a sprint.

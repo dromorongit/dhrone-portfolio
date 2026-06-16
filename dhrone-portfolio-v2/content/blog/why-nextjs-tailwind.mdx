@@ -1,0 +1,29 @@
+---
+title: "Why Next.js and Tailwind CSS Are My Default Stack for Client Projects"
+date: "2026-04-20"
+excerpt: "A practical look at the tradeoffs that make this combination my go-to for fast, polished web platforms."
+tags: ["Tech Stack", "Next.js"]
+accentColor: "#FFD93D"
+readTime: "6 min read"
+---
+
+## The default isn't laziness
+
+When every client project starts with the same stack, it's tempting to assume that's a lack of curiosity. In my case it's closer to the opposite — I've tried enough alternatives to know exactly what tradeoffs I'm accepting by reaching for Next.js and Tailwind CSS every time.
+
+## Why Next.js wins for client work
+
+Clients rarely care about architecture diagrams. They care about page speed, SEO, and being able to launch on a deadline. Next.js gives me:
+
+- File-based routing that keeps project structure predictable across every codebase I hand off
+- Built-in image optimization, which matters enormously for image-heavy e-commerce sites
+- Server components that reduce client-side JavaScript without extra configuration
+- A single framework that covers static marketing pages and dynamic dashboards equally well
+
+## Tailwind and the design-developer handoff
+
+Tailwind gets criticized for cluttering JSX with utility classes, but in practice it speeds up the exact part of client work that used to be slowest: translating a design decision into code without writing and naming a new CSS class every time. A class like `flex items-center gap-3 rounded-xl border` reads almost like a sentence, and it means I rarely touch a separate stylesheet at all.
+
+## When I reach for something else
+
+This isn't a one-size-fits-all stack. Desktop applications get Electron. Offline-first systems get SQLite instead of a hosted database. Real-time dashboards bring in Socket.IO. The Next.js and Tailwind combination is my default for web platforms specifically — not a religious commitment, just the option that's earned its place by consistently shipping faster without sacrificing quality.
