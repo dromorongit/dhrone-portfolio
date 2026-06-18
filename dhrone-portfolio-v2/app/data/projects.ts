@@ -11,6 +11,7 @@ export interface Project {
   year: string
   client: string
   featured: boolean
+  images?: string[]
 }
 
 export const projects: Project[] = [
@@ -83,6 +84,13 @@ export const projects: Project[] = [
     year: '2026',
     client: 'DhroneTech Solutions',
     featured: true,
+    images: [
+      '/images/dhronetechpos1.png',
+      '/images/dhronetechpos2.png',
+      '/images/dhronetechpos3.png',
+      '/images/dhronetechpos4.png',
+      '/images/dhronetechpos5.png',
+    ],
   },
   {
     slug: 'sweettreets',

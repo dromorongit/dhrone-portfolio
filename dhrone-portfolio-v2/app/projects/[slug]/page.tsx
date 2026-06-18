@@ -67,6 +67,20 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
           </div>
         </div>
 
+        {/* Gallery */}
+        {project.images && project.images.length > 0 && (
+          <div className="mb-16">
+            <h2 className="text-lg font-bold text-textPrimary mb-4">Project Gallery</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {project.images.map((image, index) => (
+                <div key={index} className="relative aspect-video rounded-lg overflow-hidden bg-surface border border-border">
+                  <img src={image} alt={`${project.title} screenshot ${index + 1}`} className="w-full h-full object-cover" />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Nav */}
         <div className="flex justify-between border-t border-border pt-8 mb-20">
           <Link href="/projects" className="btn-outline text-sm">
