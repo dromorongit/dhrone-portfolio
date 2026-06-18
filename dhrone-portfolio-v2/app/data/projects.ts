@@ -28,6 +28,11 @@ export const projects: Project[] = [
     year: '2026',
     client: 'Netyark Mall',
     featured: true,
+    images: [
+      '/images/netyarkmall1.png',
+      '/images/netyarkmall2.png',
+      '/images/netyarkmall3.png',
+    ],
   },
   {
     slug: 'nedhub-ghana',
@@ -42,6 +47,15 @@ export const projects: Project[] = [
     year: '2026',
     client: 'Nedhub Ghana',
     featured: true,
+    images: [
+      '/images/nedhub1.png',
+      '/images/nedhub2.png',
+      '/images/nedhub3.png',
+      '/images/nedhub4.png',
+      '/images/nedhub5.png',
+      '/images/nedhub6.png',
+      '/images/nedhub7.png',
+    ],
   },
   {
     slug: 'naaso-travels',
@@ -56,6 +70,13 @@ export const projects: Project[] = [
     year: '2026',
     client: 'Naaso Travels & Tours',
     featured: true,
+    images: [
+      '/images/naaso1.png',
+      '/images/naaso2.png',
+      '/images/naaso3.png',
+      '/images/naaso4.png',
+      '/images/naaso5.png',
+    ],
   },
   {
     slug: 'hair-elevation-studios',
@@ -105,6 +126,12 @@ export const projects: Project[] = [
     year: '2026',
     client: 'Sweet Treets',
     featured: false,
+    images: [
+      '/images/sweettreets1.png',
+      '/images/sweettreets2.png',
+      '/images/sweettreets3.png',
+      '/images/sweettreets4.png',
+    ],
   },
   {
     slug: 'rezar-aluminium',
