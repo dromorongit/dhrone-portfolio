@@ -146,6 +146,12 @@ export const projects: Project[] = [
     year: '2025',
     client: 'Rezar Aluminium Company',
     featured: false,
+    images: [
+      '/images/rezar1.png',
+      '/images/rezar2.png',
+      '/images/rezar3.png',
+      '/images/rezar4.png',
+    ],
   },
   {
     slug: 'rich-tym-luxe',
@@ -160,6 +166,12 @@ export const projects: Project[] = [
     year: '2026',
     client: 'Rich Tym Luxe',
     featured: false,
+    images: [
+      '/images/rich1.png',
+      '/images/rich2.png',
+      '/images/rich3.png',
+      '/images/rich4.png',
+    ],
   },
   {
     slug: 'shop-auntie-araba',
@@ -216,6 +228,13 @@ export const projects: Project[] = [
     year: '2025',
     client: 'Obofour Raphael',
     featured: false,
+    images: [
+      '/images/obo1.png',
+      '/images/obo2.png',
+      '/images/obo3.png',
+      '/images/obo4.png',
+      '/images/obo5.png',
+    ],
   },
 ]
 
