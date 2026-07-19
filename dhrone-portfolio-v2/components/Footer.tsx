@@ -27,9 +27,16 @@ export default function Footer() {
                   <span className="text-textMuted">.Creative</span>
                 </span>
               </Link>
-              <p className="text-textMuted text-sm leading-relaxed max-w-sm mb-8">
+              <p className="text-textMuted text-sm leading-relaxed max-w-sm mb-6">
                 Architecting premium digital experiences, sophisticated software solutions, and cinematic visual storytelling from Accra to the world.
               </p>
+
+              {/* DhroneTech Academy callout */}
+              <Link href="/academy"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold mb-6 transition-colors border border-violet/30 text-violet hover:bg-violet hover:text-white hover:border-violet">
+                🎓 DhroneTech Academy
+              </Link>
+
               <div className="flex items-center gap-3">
                 {socialLinks.map(({ icon: Icon, href, label }) => (
                   <a key={label} href={href} target="_blank" rel="noopener noreferrer"
@@ -44,12 +51,16 @@ export default function Footer() {
             <div className="md:col-span-3 md:col-start-7">
               <p className="text-[11px] font-bold text-violet uppercase tracking-widest mb-6">Navigation</p>
               <div className="space-y-3">
-                {['Projects', 'Apps', 'Videos', 'Services', 'Tech Stack', 'Contact'].map((l) => (
+                {['Projects', 'Apps', 'Videos', 'Services', 'Tech Stack', 'Blog', 'Labs', 'Contact'].map((l) => (
                   <Link key={l} href={`/${l.toLowerCase().replace(' ', '-')}`}
                     className="block text-sm text-textMuted hover:text-textPrimary transition-colors hover:translate-x-1 transform duration-200">
                     {l}
                   </Link>
                 ))}
+                <Link href="/academy"
+                  className="block text-sm font-semibold transition-colors text-violet hover:opacity-80">
+                  🎓 Academy
+                </Link>
               </div>
             </div>
 

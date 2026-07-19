@@ -66,6 +66,15 @@ export default function Navbar() {
                 </Link>
               )
             })}
+            {/* Academy — distinct badge style */}
+            <Link href="/academy"
+              className={`relative ml-1 px-3 py-1.5 rounded-lg text-sm font-semibold transition-all border ${
+                pathname === '/academy'
+                  ? 'bg-violet text-white border-violet'
+                  : 'text-violet border-violet/40 hover:bg-violet hover:text-white hover:border-violet'
+              }`}>
+              Academy
+            </Link>
           </nav>
 
           {/* Right: Toggle + CTA */}
@@ -89,16 +98,28 @@ export default function Navbar() {
       {open && (
         <div className="lg:hidden bg-[var(--bg)]/98 backdrop-blur-md border-b border-[var(--border)]">
           <nav className="container mx-auto px-6 py-4 grid grid-cols-2 gap-1">
-            {navLinks.map((link) => (
-              <Link key={link.href} href={link.href}
-                className={`px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
-                  pathname === link.href
-                    ? 'text-[var(--text-primary)] bg-[var(--surface-hover)] border border-violet/20'
-                    : 'text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--surface-hover)]'
-                }`}>
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href
+              return (
+                <Link key={link.href} href={link.href}
+                  className={`px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
+                    isActive
+                      ? 'text-[var(--text-primary)] bg-[var(--surface-hover)] border border-violet/20'
+                      : 'text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--surface-hover)]'
+                  }`}>
+                  {link.label}
+                </Link>
+              )
+            })}
+            {/* Academy mobile */}
+            <Link href="/academy"
+              className={`col-span-2 px-4 py-3 rounded-xl text-sm font-semibold text-center transition-colors border ${
+                pathname === '/academy'
+                  ? 'bg-violet text-white border-violet'
+                  : 'text-violet border-violet/40 hover:bg-violet hover:text-white'
+              }`}>
+              🎓 Academy
+            </Link>
             <Link href="/contact" className="col-span-2 btn-primary mt-2 justify-center">Hire Me</Link>
           </nav>
         </div>
