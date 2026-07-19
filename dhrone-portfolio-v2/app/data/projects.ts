@@ -1,4 +1,4 @@
-export interface Project {
+﻿export interface Project {
   slug: string
   title: string
   description: string
@@ -11,7 +11,8 @@ export interface Project {
   year: string
   client: string
   featured: boolean
-  images?: string[]
+  image: string
+  images: string[]
 }
 
 export const projects: Project[] = [
@@ -23,16 +24,13 @@ export const projects: Project[] = [
     category: 'E-commerce Platform',
     accentColor: '#6C63FF',
     technologies: ['Next.js', 'React', 'Node.js', 'MongoDB', 'Stripe', 'Tailwind CSS', 'Redux', 'AWS S3'],
-    role: 'Lead Developer — Full Stack',
+    role: 'Lead Developer � Full Stack',
     websiteUrl: 'https://www.netyarkmall.com',
     year: '2026',
     client: 'Netyark Mall',
     featured: true,
-    images: [
-      '/images/netyarkmall1.png',
-      '/images/netyarkmall2.png',
-      '/images/netyarkmall3.png',
-    ],
+    image: '/images/netyarkmall1.png',
+    images: ['/images/netyarkmall1.png', '/images/netyarkmall2.png', '/images/netyarkmall3.png'],
   },
   {
     slug: 'nedhub-ghana',
@@ -47,15 +45,8 @@ export const projects: Project[] = [
     year: '2026',
     client: 'Nedhub Ghana',
     featured: true,
-    images: [
-      '/images/nedhub1.png',
-      '/images/nedhub2.png',
-      '/images/nedhub3.png',
-      '/images/nedhub4.png',
-      '/images/nedhub5.png',
-      '/images/nedhub6.png',
-      '/images/nedhub7.png',
-    ],
+    image: '/images/nedhub1.png',
+    images: ['/images/nedhub1.png', '/images/nedhub2.png', '/images/nedhub3.png', '/images/nedhub4.png', '/images/nedhub5.png', '/images/nedhub6.png', '/images/nedhub7.png'],
   },
   {
     slug: 'naaso-travels',
@@ -70,13 +61,8 @@ export const projects: Project[] = [
     year: '2026',
     client: 'Naaso Travels & Tours',
     featured: true,
-    images: [
-      '/images/naaso1.png',
-      '/images/naaso2.png',
-      '/images/naaso3.png',
-      '/images/naaso4.png',
-      '/images/naaso5.png',
-    ],
+    image: '/images/naaso1.png',
+    images: ['/images/naaso1.png', '/images/naaso2.png', '/images/naaso3.png', '/images/naaso4.png', '/images/naaso5.png'],
   },
   {
     slug: 'hair-elevation-studios',
@@ -91,6 +77,8 @@ export const projects: Project[] = [
     year: '2025',
     client: 'Hair Elevation Studios',
     featured: true,
+    image: '/images/dhronetechpos1.png',
+    images: ['/images/dhronetechpos1.png'],
   },
   {
     slug: 'dhrone-tech-pos',
@@ -105,13 +93,8 @@ export const projects: Project[] = [
     year: '2026',
     client: 'DhroneTech Solutions',
     featured: true,
-    images: [
-      '/images/dhronetechpos1.png',
-      '/images/dhronetechpos2.png',
-      '/images/dhronetechpos3.png',
-      '/images/dhronetechpos4.png',
-      '/images/dhronetechpos5.png',
-    ],
+    image: '/images/dhronetechpos1.png',
+    images: ['/images/dhronetechpos1.png', '/images/dhronetechpos2.png', '/images/dhronetechpos3.png', '/images/dhronetechpos4.png', '/images/dhronetechpos5.png'],
   },
   {
     slug: 'sweettreets',
@@ -126,12 +109,8 @@ export const projects: Project[] = [
     year: '2026',
     client: 'Sweet Treets',
     featured: false,
-    images: [
-      '/images/sweettreets1.png',
-      '/images/sweettreets2.png',
-      '/images/sweettreets3.png',
-      '/images/sweettreets4.png',
-    ],
+    image: '/images/sweettreets1.png',
+    images: ['/images/sweettreets1.png', '/images/sweettreets2.png', '/images/sweettreets3.png', '/images/sweettreets4.png'],
   },
   {
     slug: 'rezar-aluminium',
@@ -146,12 +125,8 @@ export const projects: Project[] = [
     year: '2025',
     client: 'Rezar Aluminium Company',
     featured: false,
-    images: [
-      '/images/rezar1.png',
-      '/images/rezar2.png',
-      '/images/rezar3.png',
-      '/images/rezar4.png',
-    ],
+    image: '/images/rezar1.png',
+    images: ['/images/rezar1.png', '/images/rezar2.png', '/images/rezar3.png', '/images/rezar4.png'],
   },
   {
     slug: 'rich-tym-luxe',
@@ -166,12 +141,8 @@ export const projects: Project[] = [
     year: '2026',
     client: 'Rich Tym Luxe',
     featured: false,
-    images: [
-      '/images/rich1.png',
-      '/images/rich2.png',
-      '/images/rich3.png',
-      '/images/rich4.png',
-    ],
+    image: '/images/rich1.png',
+    images: ['/images/rich1.png', '/images/rich2.png', '/images/rich3.png', '/images/rich4.png'],
   },
   {
     slug: 'shop-auntie-araba',
@@ -186,6 +157,8 @@ export const projects: Project[] = [
     year: '2026',
     client: 'Shop Auntie Araba',
     featured: false,
+    image: '/images/netyarkmall1.png',
+    images: ['/images/netyarkmall1.png'],
   },
   {
     slug: 'affordable-wigs-gh',
@@ -200,6 +173,8 @@ export const projects: Project[] = [
     year: '2026',
     client: 'Affordable Wigs GH',
     featured: false,
+    image: '/images/netyarkmall1.png',
+    images: ['/images/netyarkmall1.png'],
   },
   {
     slug: 'cynkare',
@@ -214,6 +189,8 @@ export const projects: Project[] = [
     year: '2026',
     client: 'Cynkare',
     featured: false,
+    image: '/images/netyarkmall1.png',
+    images: ['/images/netyarkmall1.png'],
   },
   {
     slug: 'obofour-raphael',
@@ -228,13 +205,8 @@ export const projects: Project[] = [
     year: '2025',
     client: 'Obofour Raphael',
     featured: false,
-    images: [
-      '/images/obo1.png',
-      '/images/obo2.png',
-      '/images/obo3.png',
-      '/images/obo4.png',
-      '/images/obo5.png',
-    ],
+    image: '/images/obo1.png',
+    images: ['/images/obo1.png', '/images/obo2.png', '/images/obo3.png', '/images/obo4.png', '/images/obo5.png'],
   },
 ]
 
@@ -243,3 +215,5 @@ export function getProjectBySlug(slug: string): Project | undefined {
 }
 
 export const featuredProjects = projects.filter((p) => p.featured)
+
+

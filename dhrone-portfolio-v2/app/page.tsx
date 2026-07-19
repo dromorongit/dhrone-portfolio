@@ -1,46 +1,73 @@
+﻿import { Suspense } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { FiArrowRight, FiGlobe, FiSmartphone, FiCode, FiVideo, FiStar } from 'react-icons/fi'
+import { FiArrowRight, FiCode, FiSmartphone, FiVideo, FiGlobe, FiStar } from 'react-icons/fi'
 import { featuredProjects } from '@/app/data/projects'
 import GitHubStats from '@/components/GitHubStats'
 import Testimonials from '@/components/Testimonials'
-import AnimatedCounter from '@/components/AnimatedCounter'
 
 const techMarquee = ['Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL', 'MongoDB', 'Tailwind CSS', 'Electron', 'React Native', 'Prisma', 'Redis', 'AWS', 'Express', 'GraphQL', 'SQLite', 'Docker']
+
+function GitHubSkeleton() {
+  return (
+    <section className="section">
+      <div className="container mx-auto px-6">
+        <div className="h-8 w-48 rounded-lg mb-10" style={{ backgroundColor: 'var(--surface-hover)' }} />
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+          {[...Array(4)].map((_, i) => (
+            <div key={i} className="card p-6 animate-pulse">
+              <div className="h-8 w-16 rounded mb-2" style={{ backgroundColor: 'var(--surface-hover)' }} />
+              <div className="h-3 w-24 rounded" style={{ backgroundColor: 'var(--surface-hover)' }} />
+            </div>
+          ))}
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {[...Array(6)].map((_, i) => (
+            <div key={i} className="card p-5 animate-pulse">
+              <div className="h-4 w-32 rounded mb-3" style={{ backgroundColor: 'var(--surface-hover)' }} />
+              <div className="h-3 w-full rounded mb-2" style={{ backgroundColor: 'var(--surface-hover)' }} />
+              <div className="h-3 w-2/3 rounded" style={{ backgroundColor: 'var(--surface-hover)' }} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
 
 export default function HomePage() {
   return (
     <div>
       {/* HERO */}
-      <section className="min-h-screen flex items-center relative overflow-hidden pt-24 pb-12">
+      <section className="min-h-screen flex items-center relative overflow-hidden">
         <div className="absolute top-1/4 -left-40 w-96 h-96 rounded-full bg-violet/10 blur-[120px] pointer-events-none" />
-        <div className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-coral/10 blur-[100px] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-yellow/5 blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-1/4 -right-40 w-96 h-96 rounded-full bg-coral/10 blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-yellow/5 blur-[160px] pointer-events-none" />
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
+        <div className="container mx-auto px-6 py-32 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 pill border border-violet/30 text-violet mb-6 sm:mb-8">
+              <div className="inline-flex items-center gap-2 pill border border-violet/30 text-violet mb-8">
                 <span className="w-2 h-2 rounded-full bg-violet animate-pulse-slow" />
                 Available for new projects
               </div>
-              <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-4 sm:mb-6">
+              <h1 className="text-5xl sm:text-6xl font-extrabold leading-[1.05] tracking-tight mb-6">
                 <span style={{ color: 'var(--text-primary)' }}>I build </span>
                 <span className="text-gradient-violet">digital</span>
                 <br />
                 <span style={{ color: 'var(--text-primary)' }}>experiences</span>
                 <span className="text-coral">.</span>
               </h1>
-              <p className="text-base sm:text-lg max-w-xl leading-relaxed mb-6 sm:mb-8">
-                Narh H.P Dromor — Software Engineer, App Developer & Creative Director based in{' '}
+              <p className="text-lg max-w-xl leading-relaxed mb-10" style={{ color: 'var(--text-muted)' }}>
+                Narh H.P Dromor — Software Engineer, App Developer and Creative Director based in{' '}
                 <span className="text-yellow font-medium">Accra, Ghana</span>.
                 I design and build powerful software, modern platforms, and cinematic visuals.
               </p>
               <div className="flex flex-wrap gap-4 mb-14">
-                <Link href="/projects" className="btn-primary text-sm sm:text-base">View My Work <FiArrowRight size={15} /></Link>
-                <Link href="/contact" className="btn-outline text-sm sm:text-base">Get in Touch</Link>
+                <Link href="/projects" className="btn-primary">View My Work <FiArrowRight size={16} /></Link>
+                <Link href="/contact" className="btn-outline">Get in Touch</Link>
               </div>
-              <div className="flex flex-wrap gap-6 sm:gap-8 mb-16">
+              <div className="flex flex-wrap gap-8">
                 {[
                   { value: '50+', label: 'Projects' },
                   { value: '30+', label: 'Clients' },
@@ -48,22 +75,22 @@ export default function HomePage() {
                   { value: '12+', label: 'Videos' },
                 ].map((s) => (
                   <div key={s.label}>
-                    <p className="text-xl sm:text-2xl font-bold text-gradient-violet"><AnimatedCounter value={s.value} /></p>
-                    <p className="text-2xs sm:text-xs mt-1" style={{ color: 'var(--text-muted)' }}>{s.label}</p>
+                    <p className="text-2xl font-bold text-gradient-violet">{s.value}</p>
+                    <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>{s.label}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative w-56 h-64 max-w-full">
-                <div className="absolute -inset-3 rounded-3xl bg-violet/10 blur-2xl" />
-                <div className="absolute inset-0 rounded-2xl border border-coral/20 translate-x-3 translate-y-3" />
-                <div className="relative w-full h-full rounded-2xl overflow-hidden border border-[var(--border)]">
-                  <Image src="/images/dhrone.jpg" alt="Narh H.P Dromor" fill className="object-cover" priority sizes="(max-width: 768px) 224px, 224px" />
+            <div className="hidden lg:flex justify-end">
+              <div className="relative w-80 h-96">
+                <div className="absolute -inset-4 rounded-3xl bg-violet/10 blur-2xl" />
+                <div className="absolute inset-0 rounded-2xl border border-coral/20 translate-x-4 translate-y-4" />
+                <div className="relative w-full h-full rounded-2xl overflow-hidden" style={{ border: '1px solid var(--border)' }}>
+                  <Image src="/images/dhrone.jpg" alt="Narh H.P Dromor" fill className="object-cover" priority sizes="320px" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)]/50 via-transparent to-transparent" />
                 </div>
-                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 rounded-full px-4 py-2 shadow-xl whitespace-nowrap"
+                <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 rounded-full px-5 py-2.5 shadow-xl whitespace-nowrap"
                   style={{ backgroundColor: 'var(--surface)', border: '1px solid var(--border)' }}>
                   <span className="text-xs font-semibold" style={{ color: 'var(--text-primary)' }}>
                     Software Engineer <span className="text-violet">·</span> Creative Director
@@ -101,8 +128,7 @@ export default function HomePage() {
               { icon: FiVideo, color: 'text-violet', bg: 'bg-violet/10', accent: '#6C63FF', title: 'Video Production', desc: 'Professional video directing and editing for music videos and commercials.' },
             ].map((item) => (
               <div key={item.title} className="card p-6 group">
-                <div className="h-0.5 w-6 rounded mb-4 transition-all duration-300 group-hover:w-full"
-                  style={{ backgroundColor: item.accent }} />
+                <div className="h-0.5 w-6 rounded mb-4 transition-all duration-300 group-hover:w-full" style={{ backgroundColor: item.accent }} />
                 <div className={`w-10 h-10 rounded-xl ${item.bg} flex items-center justify-center mb-4`}>
                   <item.icon size={20} className={item.color} />
                 </div>
@@ -126,20 +152,28 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {featuredProjects.map((project) => (
-              <Link key={project.slug} href={`/projects/${project.slug}`} className="card p-6 group block">
-                <div className="h-0.5 w-8 rounded mb-5 transition-all duration-300 group-hover:w-full"
-                  style={{ backgroundColor: project.accentColor }} />
-                <span className="pill text-xs mb-3 block w-fit">{project.category}</span>
-                <h3 className="text-lg font-bold mb-2" style={{ color: 'var(--text-primary)' }}>{project.title}</h3>
-                <p className="text-sm leading-relaxed mb-5" style={{ color: 'var(--text-muted)' }}>{project.shortDescription}</p>
-                <div className="flex flex-wrap gap-1.5 mb-5">
-                  {project.technologies.slice(0, 3).map((tech) => (
-                    <span key={tech} className="pill text-xs">{tech}</span>
-                  ))}
-                  {project.technologies.length > 3 && <span className="pill text-xs">+{project.technologies.length - 3}</span>}
+              <Link key={project.slug} href={`/projects/${project.slug}`} className="card overflow-hidden group block">
+                <div className="relative aspect-video overflow-hidden" style={{ backgroundColor: 'var(--surface-hover)' }}>
+                  <Image src={project.image} alt={`${project.title} preview`} fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    loading="lazy" />
+                  <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, transparent 60%, ${project.accentColor}25)` }} />
                 </div>
-                <div className="flex items-center gap-1 text-xs font-semibold" style={{ color: project.accentColor }}>
-                  View Project <FiArrowRight size={13} />
+                <div className="p-6">
+                  <div className="h-0.5 w-8 rounded mb-5 transition-all duration-300 group-hover:w-full" style={{ backgroundColor: project.accentColor }} />
+                  <span className="pill text-xs mb-3 block w-fit">{project.category}</span>
+                  <h3 className="text-lg font-bold mb-2" style={{ color: 'var(--text-primary)' }}>{project.title}</h3>
+                  <p className="text-sm leading-relaxed mb-5" style={{ color: 'var(--text-muted)' }}>{project.shortDescription}</p>
+                  <div className="flex flex-wrap gap-1.5 mb-5">
+                    {project.technologies.slice(0, 3).map((tech) => (
+                      <span key={tech} className="pill text-xs">{tech}</span>
+                    ))}
+                    {project.technologies.length > 3 && <span className="pill text-xs">+{project.technologies.length - 3}</span>}
+                  </div>
+                  <div className="flex items-center gap-1 text-xs font-semibold" style={{ color: project.accentColor }}>
+                    View Project <FiArrowRight size={13} />
+                  </div>
                 </div>
               </Link>
             ))}
@@ -150,13 +184,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* GITHUB STATS */}
-      <GitHubStats />
+      {/* GITHUB STATS — wrapped in Suspense so it never blocks page render */}
+      <Suspense fallback={<GitHubSkeleton />}>
+        <GitHubStats />
+      </Suspense>
 
-      {/* TESTIMONIALS */}
       <Testimonials />
 
-      {/* CTA BANNER */}
+      {/* CTA */}
       <section className="section">
         <div className="container mx-auto px-6">
           <div className="relative rounded-2xl overflow-hidden p-10 md:p-16 text-center"
@@ -167,10 +202,10 @@ export default function HomePage() {
                 {[...Array(5)].map((_, i) => <FiStar key={i} size={16} className="text-yellow fill-yellow" />)}
               </div>
               <h2 className="text-3xl md:text-5xl font-extrabold mb-4" style={{ color: 'var(--text-primary)' }}>
-                Let&apos;s build something <span className="text-gradient-full">great together</span>
+                Let's build something <span className="text-gradient-full">great together</span>
               </h2>
               <p className="mb-8 max-w-lg mx-auto" style={{ color: 'var(--text-muted)' }}>
-                Whether you need a website, app, or creative video content — I&apos;m ready to bring your vision to life.
+                Whether you need a website, app, or creative video content — I'm ready to bring your vision to life.
               </p>
               <Link href="/contact" className="btn-primary inline-flex">Start a Project <FiArrowRight size={16} /></Link>
             </div>
