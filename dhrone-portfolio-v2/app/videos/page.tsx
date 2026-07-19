@@ -10,7 +10,7 @@ type Category = 'all' | 'music' | 'commercial'
 
 const catColor = (cat: string) => cat === 'music' ? '#6C63FF' : '#FF6B6B'
 
-function getYoutubeThumbnail(id: string, isShort?: boolean) {
+function getYoutubeThumbnail(id: string) {
   return `https://img.youtube.com/vi/${id}/hqdefault.jpg`
 }
 
@@ -106,7 +106,7 @@ export default function VideosPage() {
               >
                 <div className="relative aspect-video overflow-hidden" style={{ backgroundColor: 'var(--surface-hover)' }}>
                   <Image
-                    src={getYoutubeThumbnail(video.youtubeId, video.isShort)}
+                    src={getYoutubeThumbnail(video.youtubeId)}
                     alt={video.title}
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"

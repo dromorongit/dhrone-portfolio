@@ -202,10 +202,10 @@ export default function HomePage() {
                 {[...Array(5)].map((_, i) => <FiStar key={i} size={16} className="text-yellow fill-yellow" />)}
               </div>
               <h2 className="text-3xl md:text-5xl font-extrabold mb-4" style={{ color: 'var(--text-primary)' }}>
-                Let's build something <span className="text-gradient-full">great together</span>
+                Let&apos;s build something <span className="text-gradient-full">great together</span>
               </h2>
               <p className="mb-8 max-w-lg mx-auto" style={{ color: 'var(--text-muted)' }}>
-                Whether you need a website, app, or creative video content — I'm ready to bring your vision to life.
+                Whether you need a website, app, or creative video content — I&apos;m ready to bring your vision to life.
               </p>
               <Link href="/contact" className="btn-primary inline-flex">Start a Project <FiArrowRight size={16} /></Link>
             </div>
