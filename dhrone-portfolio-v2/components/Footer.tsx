@@ -1,13 +1,14 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { FiMail, FiPhone, FiMapPin, FiGithub, FiLinkedin, FiTwitter, FiInstagram } from 'react-icons/fi'
+import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi'
+import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa'
 
 export default function Footer() {
   const socialLinks = [
-    { icon: FiGithub, href: 'https://github.com/dromorongit', label: 'GitHub' },
-    { icon: FiLinkedin, href: '#', label: 'LinkedIn' },
-    { icon: FiTwitter, href: '#', label: 'Twitter' },
-    { icon: FiInstagram, href: '#', label: 'Instagram' },
+    { icon: FaGithub, href: 'https://github.com/dromorongit', label: 'GitHub' },
+    { icon: FaLinkedin, href: '#', label: 'LinkedIn' },
+    { icon: FaTwitter, href: '#', label: 'Twitter' },
+    { icon: FaInstagram, href: '#', label: 'Instagram' },
   ]
 
   return (
@@ -72,15 +73,15 @@ export default function Footer() {
                   <div className="w-9 h-9 rounded-lg bg-violet/15 flex items-center justify-center shrink-0 group-hover:bg-violet/25 transition-colors">
                     <FiMail size={16} className="text-violet" />
                   </div>
-                  <span>iamdhrone@gmail.com</span>
+<span>iamdhrone@gmail.com</span>
                 </a>
-<a href="tel:+233596522239"
-                   className="flex items-center gap-3 text-sm text-textMuted hover:text-textPrimary transition-colors group">
-                   <div className="w-9 h-9 rounded-lg bg-coral/15 flex items-center justify-center shrink-0 group-hover:bg-coral/25 transition-colors">
-                     <FiPhone size={16} className="text-coral" />
-                   </div>
-                   <span>+233 59 652 2239</span>
-                 </a>
+                <a href="tel:+233596522239"
+                  className="flex items-center gap-3 text-sm text-textMuted hover:text-textPrimary transition-colors group">
+                  <div className="w-9 h-9 rounded-lg bg-coral/15 flex items-center justify-center shrink-0 group-hover:bg-coral/25 transition-colors">
+                    <FiPhone size={16} className="text-coral" />
+                  </div>
+                  <span>+233 59 652 2239</span>
+                </a>
                 <div className="flex items-start gap-3 text-sm text-textMuted">
                   <div className="w-9 h-9 rounded-lg bg-yellow/15 flex items-center justify-center shrink-0 mt-0.5">
                     <FiMapPin size={16} className="text-yellow" />

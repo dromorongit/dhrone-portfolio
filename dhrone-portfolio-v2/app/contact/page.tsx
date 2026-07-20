@@ -3,6 +3,7 @@
 import { useState, useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import { FiMail, FiPhone, FiMapPin, FiSend, FiCheckCircle, FiAlertCircle } from 'react-icons/fi'
+import { FaGithub, FaInstagram } from 'react-icons/fa'
 import PageWrapper from '@/components/PageWrapper'
 
 type Status = 'idle' | 'sending' | 'success' | 'error'
@@ -137,13 +138,14 @@ export default function ContactPage() {
                 <p className="text-xs uppercase tracking-widest mb-4" style={{ color: 'var(--text-muted)' }}>Follow Me</p>
                 <div className="flex gap-3">
                   {[
-                    { href: 'https://github.com/dromorongit', label: 'GitHub' },
-                    { href: 'https://www.instagram.com/iamdhrone', label: 'Instagram' },
-                  ].map((s) => (
-                    <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
+                    { Icon: FaGithub, href: 'https://github.com/dromorongit', label: 'GitHub' },
+                    { Icon: FaInstagram, href: 'https://www.instagram.com/iamdhrone', label: 'Instagram' },
+                  ].map((item) => (
+                    <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer"
                       className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm transition-colors"
                       style={{ backgroundColor: 'var(--surface-hover)', border: '1px solid var(--border)', color: 'var(--text-muted)' }}>
-                      {s.label}
+                      <item.Icon size={16} />
+                      {item.label}
                     </a>
                   ))}
                 </div>
