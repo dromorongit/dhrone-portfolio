@@ -74,13 +74,13 @@ export default function Footer() {
                   </div>
                   <span>iamdhrone@gmail.com</span>
                 </a>
-                <a href="tel:+233538284952"
-                  className="flex items-center gap-3 text-sm text-textMuted hover:text-textPrimary transition-colors group">
-                  <div className="w-9 h-9 rounded-lg bg-coral/15 flex items-center justify-center shrink-0 group-hover:bg-coral/25 transition-colors">
-                    <FiPhone size={16} className="text-coral" />
-                  </div>
-                  <span>+233 53 828 4952</span>
-                </a>
+<a href="tel:+233596522239"
+                   className="flex items-center gap-3 text-sm text-textMuted hover:text-textPrimary transition-colors group">
+                   <div className="w-9 h-9 rounded-lg bg-coral/15 flex items-center justify-center shrink-0 group-hover:bg-coral/25 transition-colors">
+                     <FiPhone size={16} className="text-coral" />
+                   </div>
+                   <span>+233 59 652 2239</span>
+                 </a>
                 <div className="flex items-start gap-3 text-sm text-textMuted">
                   <div className="w-9 h-9 rounded-lg bg-yellow/15 flex items-center justify-center shrink-0 mt-0.5">
                     <FiMapPin size={16} className="text-yellow" />
