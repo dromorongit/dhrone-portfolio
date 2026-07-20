@@ -11,7 +11,7 @@ const desktopApps = [
   {
     icon: FiShoppingCart,
     color: '#FF6B6B',
-    title: 'Dhrone Tech POS System',
+    title: 'DhreamPOS System',
     desc: 'A retail point of sale platform with inventory management, sales analytics and transaction management.',
     features: ['Point of Sale', 'Inventory Management', 'Sales Analytics', 'Transaction History', 'Customer Management'],
   },
