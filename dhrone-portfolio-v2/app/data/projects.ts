@@ -17,6 +17,38 @@
 
 export const projects: Project[] = [
   {
+    slug: 'dhream-market',
+    title: 'Dhream Market',
+    description: 'A Ghana-first multi-vendor e-commerce marketplace where multiple vendors can list and sell products to customers across Ghana. Features slug-based SEO-friendly URLs, product detail pages, wishlist functionality, pre-order with auto-expiry, Paystack payment integration, Cloudinary image management, and a full admin and vendor dashboard.',
+    shortDescription: 'Ghana-first multi-vendor e-commerce marketplace with Paystack & vendor dashboards',
+    category: 'E-commerce Platform',
+    accentColor: '#6C63FF',
+    technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Paystack', 'Cloudinary', 'Tailwind CSS', 'Railway'],
+    role: 'Lead Developer — Full Stack',
+    websiteUrl: 'https://dhreamarket.com',
+    year: '2025',
+    client: 'DhroneTech Solutions',
+    featured: true,
+    image: '/images/dhreammarket1.png',
+    images: ['/images/dhreammarket1.png', '/images/dhreammarket2.png', '/images/dhreammarket3.png', '/images/dhreammarket4.png', '/images/dhreammarket5.png'],
+  },
+  {
+    slug: 'opulenport-trading',
+    title: 'OpulenPort Trading',
+    description: 'A full-featured website for an international sourcing, procurement, and importation company based in Accra. Features a product catalog with Cloudinary image uploads, Paystack payment integration, admin dashboard, inquiry management, and a fully deployed production environment on Railway.',
+    shortDescription: 'International sourcing & importation company website with Paystack and admin dashboard',
+    category: 'Business Platform',
+    accentColor: '#FFD93D',
+    technologies: ['Next.js', 'TypeScript', 'MongoDB', 'Cloudinary', 'Paystack', 'Tailwind CSS', 'Railway'],
+    role: 'Lead Developer — Full Stack',
+    websiteUrl: 'https://opulenporttrading.com',
+    year: '2025',
+    client: 'OpulenPort Trading',
+    featured: true,
+    image: '/images/opulenport1.png',
+    images: ['/images/opulenport1.png', '/images/opulenport2.png', '/images/opulenport3.png'],
+  },
+  {
     slug: 'netyark-mall',
     title: 'Netyark Mall',
     description: 'A comprehensive e-commerce platform featuring product catalog management, shopping cart functionality, secure payment integration, order tracking, and an intuitive admin dashboard for inventory management. The platform supports multiple vendors and offers a seamless shopping experience across all devices.',
@@ -24,7 +56,7 @@ export const projects: Project[] = [
     category: 'E-commerce Platform',
     accentColor: '#6C63FF',
     technologies: ['Next.js', 'React', 'Node.js', 'MongoDB', 'Stripe', 'Tailwind CSS', 'Redux', 'AWS S3'],
-    role: 'Lead Developer � Full Stack',
+    role: 'Lead Developer — Full Stack',
     websiteUrl: 'https://www.netyarkmall.com',
     year: '2026',
     client: 'Netyark Mall',
@@ -75,7 +107,7 @@ export const projects: Project[] = [
     role: 'Full Stack Developer',
     websiteUrl: 'https://www.hairelevationstudio.com',
     year: '2025',
-client: 'Hair Elevation Studios',
+    client: 'Hair Elevation Studios',
     featured: true,
     image: '/images/hair1.png',
     images: ['/images/hair1.png', '/images/hair2.png', '/images/hair3.png', '/images/hair4.png', '/images/hair5.png', '/images/hair6.png'],
@@ -215,5 +247,3 @@ export function getProjectBySlug(slug: string): Project | undefined {
 }
 
 export const featuredProjects = projects.filter((p) => p.featured)
-
-
