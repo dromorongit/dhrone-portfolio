@@ -113,7 +113,7 @@ export default function ContactPage() {
             {/* Info */}
             <div className="space-y-4">
               {[
-                { icon: FiMail, label: 'Email', value: 'iamdhrone@gmail.com', href: 'mailto:iamdhrone@gmail.com', color: '#6C63FF' },
+                { icon: FiMail, label: 'Email', value: 'business.dhrone@gmail.com', href: 'mailto:business.dhrone@gmail.com', color: '#6C63FF' },
                 { icon: FiPhone, label: 'Phone / WhatsApp', value: '+233 59 652 2239', href: 'tel:+233596522239', color: '#FF6B6B' },
                 { icon: FiMapPin, label: 'Location', value: 'Dhrone Creative Gallery, Santa Maria, Accra, Ghana', href: null, color: '#FFD93D' },
               ].map((item) => (

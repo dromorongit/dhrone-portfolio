@@ -68,12 +68,12 @@ export default function Footer() {
             <div className="md:col-span-4">
               <p className="text-[11px] font-bold text-violet uppercase tracking-widest mb-6">Connect</p>
               <div className="space-y-4">
-                <a href="mailto:iamdhrone@gmail.com"
+                <a href="mailto:business.dhrone@gmail.com"
                   className="flex items-center gap-3 text-sm text-textMuted hover:text-textPrimary transition-colors group">
                   <div className="w-9 h-9 rounded-lg bg-violet/15 flex items-center justify-center shrink-0 group-hover:bg-violet/25 transition-colors">
                     <FiMail size={16} className="text-violet" />
                   </div>
-<span>iamdhrone@gmail.com</span>
+<span>business.dhrone@gmail.com</span>
                 </a>
                 <a href="tel:+233596522239"
                   className="flex items-center gap-3 text-sm text-textMuted hover:text-textPrimary transition-colors group">
