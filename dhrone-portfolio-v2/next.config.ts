@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       { protocol: 'https', hostname: 'img.youtube.com' },
     ],
+    unoptimized: true,
   },
   async headers() {
     return [
