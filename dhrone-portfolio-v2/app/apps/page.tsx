@@ -1,4 +1,5 @@
 import { FiPackage, FiShoppingCart, FiDatabase } from 'react-icons/fi'
+import Link from 'next/link'
 
 const desktopApps = [
   {
@@ -47,23 +48,43 @@ export default function AppsPage() {
           </h2>
           <div className="grid md:grid-cols-2 gap-5">
             {desktopApps.map((app) => (
-              <div key={app.title} className="card p-6 overflow-hidden">
-                <div className="h-0.5 -mx-6 -mt-6 mb-6" style={{ backgroundColor: app.color }} />
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                  style={{ backgroundColor: `${app.color}20` }}>
-                  <app.icon size={24} style={{ color: app.color }} />
+              app.title === 'DhreamPOS System' ? (
+                <Link key={app.title} href="/apps/dhream-pos" className="card p-6 overflow-hidden group">
+                  <div className="h-0.5 -mx-6 -mt-6 mb-6" style={{ backgroundColor: app.color }} />
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+                    style={{ backgroundColor: `${app.color}20` }}>
+                    <app.icon size={24} style={{ color: app.color }} />
+                  </div>
+                  <h3 className="text-xl font-bold text-textPrimary mb-2">{app.title}</h3>
+                  <p className="text-sm text-textMuted mb-5 leading-relaxed">{app.desc}</p>
+                  <ul className="space-y-2">
+                    {app.features.map((f) => (
+                      <li key={f} className="flex items-center gap-2 text-sm text-textMuted">
+                        <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: app.color }} />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </Link>
+              ) : (
+                <div key={app.title} className="card p-6 overflow-hidden">
+                  <div className="h-0.5 -mx-6 -mt-6 mb-6" style={{ backgroundColor: app.color }} />
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+                    style={{ backgroundColor: `${app.color}20` }}>
+                    <app.icon size={24} style={{ color: app.color }} />
+                  </div>
+                  <h3 className="text-xl font-bold text-textPrimary mb-2">{app.title}</h3>
+                  <p className="text-sm text-textMuted mb-5 leading-relaxed">{app.desc}</p>
+                  <ul className="space-y-2">
+                    {app.features.map((f) => (
+                      <li key={f} className="flex items-center gap-2 text-sm text-textMuted">
+                        <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: app.color }} />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h3 className="text-xl font-bold text-textPrimary mb-2">{app.title}</h3>
-                <p className="text-sm text-textMuted mb-5 leading-relaxed">{app.desc}</p>
-                <ul className="space-y-2">
-                  {app.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-sm text-textMuted">
-                      <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: app.color }} />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              )
             ))}
           </div>
         </div>

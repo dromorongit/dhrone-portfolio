@@ -66,15 +66,24 @@ export default function Navbar() {
                 </Link>
               )
             })}
-            {/* Academy — distinct badge style */}
-            <Link href="/academy"
-              className={`relative ml-1 px-3 py-1.5 rounded-lg text-sm font-semibold transition-all border ${
-                pathname === '/academy'
-                  ? 'bg-violet text-white border-violet'
-                  : 'text-violet border-violet/40 hover:bg-violet hover:text-white hover:border-violet'
-              }`}>
-              Academy
-            </Link>
+             {/* Academy — distinct badge style */}
+             <Link href="/academy"
+               className={`relative ml-1 px-3 py-1.5 rounded-lg text-sm font-semibold transition-all border ${
+                 pathname === '/academy'
+                   ? 'bg-violet text-white border-violet'
+                   : 'text-violet border-violet/40 hover:bg-violet hover:text-white hover:border-violet'
+               }`}>
+               Academy
+             </Link>
+             {/* Dhream POS — distinct badge style */}
+             <Link href="/apps/dhream-pos"
+               className={`relative ml-1 px-3 py-1.5 rounded-lg text-sm font-semibold transition-all border ${
+                 pathname === '/apps/dhream-pos'
+                   ? 'bg-coral text-white border-coral'
+                   : 'text-coral border-coral/40 hover:bg-coral hover:text-white hover:border-coral'
+               }`}>
+               Dhream POS
+             </Link>
           </nav>
 
           {/* Right: Toggle + CTA */}
@@ -111,16 +120,25 @@ export default function Navbar() {
                 </Link>
               )
             })}
-            {/* Academy mobile */}
-            <Link href="/academy"
-              className={`col-span-2 px-4 py-3 rounded-xl text-sm font-semibold text-center transition-colors border ${
-                pathname === '/academy'
-                  ? 'bg-violet text-white border-violet'
-                  : 'text-violet border-violet/40 hover:bg-violet hover:text-white'
-              }`}>
-              🎓 Academy
-            </Link>
-            <Link href="/contact" className="col-span-2 btn-primary mt-2 justify-center">Hire Me</Link>
+             {/* Academy mobile */}
+             <Link href="/academy"
+               className={`col-span-2 px-4 py-3 rounded-xl text-sm font-semibold text-center transition-colors border ${
+                 pathname === '/academy'
+                   ? 'bg-violet text-white border-violet'
+                   : 'text-violet border-violet/40 hover:bg-violet hover:text-white'
+               }`}>
+               🎓 Academy
+             </Link>
+             {/* Dhream POS mobile */}
+             <Link href="/apps/dhream-pos"
+               className={`col-span-2 px-4 py-3 rounded-xl text-sm font-semibold text-center transition-colors border ${
+                 pathname === '/apps/dhream-pos'
+                   ? 'bg-coral text-white border-coral'
+                   : 'text-coral border-coral/40 hover:bg-coral hover:text-white'
+               }`}>
+               🛒 Dhream POS
+             </Link>
+             <Link href="/contact" className="col-span-2 btn-primary mt-2 justify-center">Hire Me</Link>
           </nav>
         </div>
       )}
