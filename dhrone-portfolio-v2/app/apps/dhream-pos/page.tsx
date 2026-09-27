@@ -241,6 +241,9 @@ export default function DhreamPosPage() {
                 <a href="https://www.dhreamarket.com/marketplace/product/dhreampos-software" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-2 px-4">
                   Buy on Dhream Market
                 </a>
+                <p className="text-xs mt-3 font-semibold" style={{ color: 'var(--text-muted)' }}>
+                  Save GHS 2,000 — get the lifetime license for GHS 1,000 on Dhream Market
+                </p>
               </div>
               <div className="card p-8 text-center">
                 <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Monthly license</h3>
