@@ -67,7 +67,7 @@ export default function DhreamPosPage() {
                 Dhream POS is a desktop point-of-sale application built for small and growing businesses — retail shops, boutiques, and similar storefronts that need a fast, reliable way to sell, track stock, and manage staff without depending on an internet connection.
               </p>
               <div className="flex flex-wrap gap-4">
-                <a href="https://bit.ly/45Qknao" target="_blank" rel="noopener noreferrer" className="btn-primary">
+                <a href="https://bit.ly/4xPyEzD" target="_blank" rel="noopener noreferrer" className="btn-primary">
                   <FiDownload size={16} /> Download for Windows
                 </a>
               </div>
@@ -237,7 +237,10 @@ export default function DhreamPosPage() {
               <div className="card p-8 text-center">
                 <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>One-time license</h3>
                 <p className="text-3xl font-extrabold text-violet mb-2">GHS 3,000</p>
-                <p className="text-sm" style={{ color: 'var(--text-muted)' }}>Pay once, use indefinitely on your licensed device.</p>
+                <p className="text-sm mb-4" style={{ color: 'var(--text-muted)' }}>Pay once, use indefinitely on your licensed device.</p>
+                <a href="https://www.dhreamarket.com/marketplace/product/dhreampos-software" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-2 px-4">
+                  Buy on Dhream Market
+                </a>
               </div>
               <div className="card p-8 text-center">
                 <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Monthly license</h3>
@@ -339,7 +342,7 @@ export default function DhreamPosPage() {
                 Download Dhream POS and reach out to activate your license.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <a href="https://bit.ly/45Qknao" target="_blank" rel="noopener noreferrer" className="btn-primary">
+                <a href="https://bit.ly/4xPyEzD" target="_blank" rel="noopener noreferrer" className="btn-primary">
                   <FiDownload size={16} /> Download for Windows
                 </a>
               </div>
