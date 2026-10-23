@@ -84,6 +84,15 @@ export default function Navbar() {
                }`}>
                Dhream POS
              </Link>
+             {/* Dhream Finance — distinct badge style */}
+             <Link href="/apps/dhream-finance"
+               className={`relative ml-1 px-3 py-1.5 rounded-lg text-sm font-semibold transition-all border ${
+                 pathname === '/apps/dhream-finance'
+                   ? 'bg-violet text-white border-violet'
+                   : 'text-violet border-violet/40 hover:bg-violet hover:text-white hover:border-violet'
+               }`}>
+               Dhream Finance
+             </Link>
           </nav>
 
           {/* Right: Toggle + CTA */}
@@ -137,6 +146,15 @@ export default function Navbar() {
                    : 'text-coral border-coral/40 hover:bg-coral hover:text-white'
                }`}>
                🛒 Dhream POS
+             </Link>
+             {/* Dhream Finance mobile */}
+             <Link href="/apps/dhream-finance"
+               className={`col-span-2 px-4 py-3 rounded-xl text-sm font-semibold text-center transition-colors border ${
+                 pathname === '/apps/dhream-finance'
+                   ? 'bg-violet text-white border-violet'
+                   : 'text-violet border-violet/40 hover:bg-violet hover:text-white hover:border-violet'
+               }`}>
+               💰 Dhream Finance
              </Link>
              <Link href="/contact" className="col-span-2 btn-primary mt-2 justify-center">Hire Me</Link>
           </nav>

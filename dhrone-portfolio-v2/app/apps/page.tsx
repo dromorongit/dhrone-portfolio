@@ -1,4 +1,4 @@
-import { FiPackage, FiShoppingCart, FiDatabase } from 'react-icons/fi'
+import { FiPackage, FiShoppingCart, FiDatabase, FiTrendingUp } from 'react-icons/fi'
 import Link from 'next/link'
 
 const desktopApps = [
@@ -15,6 +15,13 @@ const desktopApps = [
     title: 'DhreamPOS System',
     desc: 'A retail point of sale platform with inventory management, sales analytics and transaction management.',
     features: ['Point of Sale', 'Inventory Management', 'Sales Analytics', 'Transaction History', 'Customer Management'],
+  },
+  {
+    icon: FiTrendingUp,
+    color: '#6C63FF',
+    title: 'Dhream Finance',
+    desc: 'An offline-first income and expense manager with invoicing, budgets and reports.',
+    features: ['Income & Expenses', 'Invoicing', 'Budgets', 'Reports', 'Multi-user Access'],
   },
 ]
 
@@ -48,8 +55,8 @@ export default function AppsPage() {
           </h2>
           <div className="grid md:grid-cols-2 gap-5">
             {desktopApps.map((app) => (
-              app.title === 'DhreamPOS System' ? (
-                <Link key={app.title} href="/apps/dhream-pos" className="card p-6 overflow-hidden group">
+              (app.title === 'DhreamPOS System' || app.title === 'Dhream Finance') ? (
+                <Link key={app.title} href={app.title === 'Dhream Finance' ? '/apps/dhream-finance' : '/apps/dhream-pos'} className="card p-6 overflow-hidden group">
                   <div className="h-0.5 -mx-6 -mt-6 mb-6" style={{ backgroundColor: app.color }} />
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
                     style={{ backgroundColor: `${app.color}20` }}>
@@ -118,7 +125,7 @@ export default function AppsPage() {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
           {[
-            { value: '2+', label: 'Desktop Apps' },
+            { value: '3+', label: 'Desktop Apps' },
             { value: '5+', label: 'APIs Built' },
             { value: '100+', label: 'Endpoints' },
             { value: '99.9%', label: 'Uptime' },
