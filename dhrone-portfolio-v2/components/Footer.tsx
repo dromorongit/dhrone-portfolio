@@ -32,10 +32,10 @@ export default function Footer() {
                 Architecting premium digital experiences, sophisticated software solutions, and cinematic visual storytelling from Accra to the world.
               </p>
 
-              {/* DhroneTech Academy callout */}
+              {/* School of DhroneTech callout */}
               <Link href="/academy"
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold mb-6 transition-colors border border-violet/30 text-violet hover:bg-violet hover:text-white hover:border-violet">
-                🎓 DhroneTech Academy
+                🎓 School of DhroneTech
               </Link>
 
               <div className="flex items-center gap-3">
@@ -60,7 +60,7 @@ export default function Footer() {
                 ))}
                 <Link href="/academy"
                   className="block text-sm font-semibold transition-colors text-violet hover:opacity-80">
-                  🎓 Academy
+                  🎓 School of DhroneTech
                 </Link>
               </div>
             </div>

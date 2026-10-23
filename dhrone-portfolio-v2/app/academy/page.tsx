@@ -1,4 +1,4 @@
-import { FiCheckCircle, FiPhone, FiMail, FiClock, FiArrowRight, FiUsers, FiAward, FiMonitor } from 'react-icons/fi'
+import { FiCheckCircle, FiPhone, FiMail, FiClock, FiArrowRight, FiUsers, FiAward, FiMonitor, FiCode, FiVideo, FiEdit3, FiCreditCard } from 'react-icons/fi'
 import { SiWhatsapp, SiInstagram, SiTiktok } from 'react-icons/si'
 import PageWrapper from '@/components/PageWrapper'
 
@@ -23,6 +23,24 @@ const courses = [
     title: 'AI Tools & Digital Productivity',
     desc: 'Harness the power of Artificial Intelligence tools for work and business. Learn to use cutting-edge AI applications to boost your productivity and stay ahead in the digital economy.',
     duration: '3 Months',
+  },
+  {
+    icon: FiCode,
+    color: '#6C63FF',
+    title: 'Systems & Software Engineering Basics',
+    desc: 'Learn how software and computer systems are built. Cover programming fundamentals, how applications work, and the problem-solving skills you need to start a career in software engineering.',
+  },
+  {
+    icon: FiVideo,
+    color: '#FF6B6B',
+    title: 'Basics of Videography and Camera Handling',
+    desc: 'Learn the fundamentals of video production, from handling a camera and framing shots to lighting, audio and basic editing, so you can shoot professional-looking content.',
+  },
+  {
+    icon: FiEdit3,
+    color: '#FFD93D',
+    title: 'Script Writing',
+    desc: 'Learn to turn ideas into clear, engaging scripts for video, film, adverts and social content, covering story structure, dialogue and script formatting.',
   },
 ]
 
@@ -62,7 +80,7 @@ export default function AcademyPage() {
                 <span className="w-2 h-2 rounded-full bg-violet animate-pulse-slow" />
                 Registration Now Open — Limited Slots
               </div>
-              <p className="text-xs font-semibold text-violet uppercase tracking-widest mb-3">DhroneTech Academy</p>
+              <p className="text-xs font-semibold text-violet uppercase tracking-widest mb-3">School of DhroneTech</p>
               <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6" style={{ color: 'var(--text-primary)' }}>
                 Your future in <span className="text-gradient-violet">tech</span> starts here
               </h1>
@@ -98,10 +116,12 @@ export default function AcademyPage() {
                   </div>
                   <h3 className="font-bold text-lg mb-3" style={{ color: 'var(--text-primary)' }}>{course.title}</h3>
                   <p className="text-sm leading-relaxed mb-5" style={{ color: 'var(--text-muted)' }}>{course.desc}</p>
-                  <div className="flex items-center gap-2 text-xs font-semibold"
-                    style={{ color: course.color }}>
-                    <FiClock size={13} /> {course.duration}
-                  </div>
+                  {course.duration && (
+                    <div className="flex items-center gap-2 text-xs font-semibold"
+                      style={{ color: course.color }}>
+                      <FiClock size={13} /> {course.duration}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -111,8 +131,8 @@ export default function AcademyPage() {
           <div className="grid md:grid-cols-2 gap-5 mb-20">
             {/* Duration */}
             <div className="card p-8">
-              <p className="text-xs font-semibold text-yellow uppercase tracking-widest mb-3">Programme Duration</p>
-              <h3 className="text-xl font-bold mb-6" style={{ color: 'var(--text-primary)' }}>How long does it take?</h3>
+              <p className="text-xs font-semibold text-yellow uppercase tracking-widest mb-3">Duration &amp; Fees</p>
+              <h3 className="text-xl font-bold mb-6" style={{ color: 'var(--text-primary)' }}>Duration and registration</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-4 p-4 rounded-xl" style={{ backgroundColor: 'var(--surface-hover)' }}>
                   <div className="w-10 h-10 rounded-lg bg-violet/10 flex items-center justify-center shrink-0">
@@ -128,8 +148,17 @@ export default function AcademyPage() {
                     <FiAward size={18} className="text-coral" />
                   </div>
                   <div>
-                    <p className="font-semibold text-sm mb-0.5" style={{ color: 'var(--text-primary)' }}>DhroneTech Academy Complete Package</p>
+                    <p className="font-semibold text-sm mb-0.5" style={{ color: 'var(--text-primary)' }}>School of DhroneTech Complete Package</p>
                     <p className="text-2xl font-extrabold text-coral">6 Months</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 p-4 rounded-xl" style={{ backgroundColor: 'var(--surface-hover)' }}>
+                  <div className="w-10 h-10 rounded-lg bg-yellow/10 flex items-center justify-center shrink-0">
+                    <FiCreditCard size={18} className="text-yellow" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-sm mb-0.5" style={{ color: 'var(--text-primary)' }}>Registration &amp; Admission Fee</p>
+                    <p className="text-2xl font-extrabold text-yellow">GHS 150</p>
                   </div>
                 </div>
               </div>
@@ -138,7 +167,7 @@ export default function AcademyPage() {
             {/* Benefits */}
             <div className="card p-8">
               <p className="text-xs font-semibold text-violet uppercase tracking-widest mb-3">Why Choose Us</p>
-              <h3 className="text-xl font-bold mb-6" style={{ color: 'var(--text-primary)' }}>Why DhroneTech Academy?</h3>
+              <h3 className="text-xl font-bold mb-6" style={{ color: 'var(--text-primary)' }}>Why School of DhroneTech?</h3>
               <ul className="space-y-4">
                 {benefits.map((b) => (
                   <li key={b} className="flex items-center gap-3">
@@ -201,6 +230,7 @@ export default function AcademyPage() {
                 Take the first step toward building practical digital skills for work, business, and the future.
                 Enroll today before slots fill up.
               </p>
+              <p className="text-sm font-semibold text-center mb-6" style={{ color: 'var(--text-primary)' }}>Registration &amp; Admission fee: GHS 150</p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a href="https://wa.me/447865840464" target="_blank" rel="noopener noreferrer" className="btn-primary">
                   <SiWhatsapp size={16} /> Enroll via WhatsApp
