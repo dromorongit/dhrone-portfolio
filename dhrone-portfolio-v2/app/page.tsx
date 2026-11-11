@@ -40,9 +40,9 @@ export default function HomePage() {
     <div>
       {/* HERO */}
       <section className="min-h-screen flex items-center relative overflow-hidden">
-        <div className="absolute top-1/4 -left-40 w-96 h-96 rounded-full bg-violet/10 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-1/4 -right-40 w-96 h-96 rounded-full bg-coral/10 blur-[120px] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-yellow/5 blur-[160px] pointer-events-none" />
+        <div className="hidden md:block absolute top-1/4 -left-40 w-96 h-96 rounded-full bg-violet/10 blur-[120px] pointer-events-none" />
+        <div className="hidden md:block absolute bottom-1/4 -right-40 w-96 h-96 rounded-full bg-coral/10 blur-[120px] pointer-events-none" />
+        <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-yellow/5 blur-[160px] pointer-events-none" />
 
         <div className="container mx-auto px-6 py-32 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -84,7 +84,7 @@ export default function HomePage() {
 
             <div className="hidden lg:flex justify-end">
               <div className="relative w-80 h-96">
-                <div className="absolute -inset-4 rounded-3xl bg-violet/10 blur-2xl" />
+                <div className="hidden md:block absolute -inset-4 rounded-3xl bg-violet/10 blur-2xl" />
                 <div className="absolute inset-0 rounded-2xl border border-coral/20 translate-x-4 translate-y-4" />
                 <div className="relative w-full h-full rounded-2xl overflow-hidden" style={{ border: '1px solid var(--border)' }}>
                   <Image src="/images/dhrone.jpg" alt="Narh H.P Dromor" fill className="object-cover" priority sizes="320px" />

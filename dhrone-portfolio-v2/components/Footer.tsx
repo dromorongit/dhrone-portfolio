@@ -108,8 +108,8 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 w-32 h-32 bg-violet/15 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2 pointer-events-none" />
-        <div className="absolute top-0 right-0 w-40 h-40 bg-coral/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3 pointer-events-none" />
+        <div className="hidden md:block absolute bottom-0 left-0 w-32 h-32 bg-violet/15 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2 pointer-events-none" />
+        <div className="hidden md:block absolute top-0 right-0 w-40 h-40 bg-coral/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3 pointer-events-none" />
       </div>
     </footer>
   )

@@ -57,8 +57,8 @@ export default function AboutPage() {
           {/* Right: Photo */}
           <div className="relative flex justify-center lg:justify-end">
             {/* Glow blobs behind photo */}
-            <div className="absolute -top-10 -left-10 w-64 h-64 rounded-full bg-violet/15 blur-[80px] pointer-events-none" />
-            <div className="absolute -bottom-10 -right-10 w-48 h-48 rounded-full bg-coral/10 blur-[60px] pointer-events-none" />
+            <div className="hidden md:block absolute -top-10 -left-10 w-64 h-64 rounded-full bg-violet/15 blur-[80px] pointer-events-none" />
+            <div className="hidden md:block absolute -bottom-10 -right-10 w-48 h-48 rounded-full bg-coral/10 blur-[60px] pointer-events-none" />
 
             {/* Photo frame */}
             <div className="relative w-72 h-80 md:w-80 md:h-96">

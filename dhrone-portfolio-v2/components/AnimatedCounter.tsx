@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 interface AnimatedCounterProps {
   value: string
@@ -9,8 +9,30 @@ interface AnimatedCounterProps {
 
 export default function AnimatedCounter({ value, duration = 2000 }: AnimatedCounterProps) {
   const [count, setCount] = useState(0)
+  const [isInView, setIsInView] = useState(false)
+  const spanRef = useRef<HTMLSpanElement | null>(null)
 
   useEffect(() => {
+    const target = spanRef.current
+    if (!target) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.4 }
+    )
+
+    observer.observe(target)
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!isInView) return
+
     let numericValue = parseInt(value.replace('+', '').replace('%', ''))
     if (isNaN(numericValue)) {
       numericValue = 0
@@ -30,14 +52,14 @@ export default function AnimatedCounter({ value, duration = 2000 }: AnimatedCoun
 
     animationFrame = requestAnimationFrame(animate)
     return () => cancelAnimationFrame(animationFrame)
-  }, [value, duration])
+  }, [isInView, value, duration])
 
   if (value.includes('%')) {
-    return <span>{count}%</span>
+    return <span ref={spanRef}>{count}%</span>
   }
   if (value.includes('+')) {
-    return <span>{count}+</span>
+    return <span ref={spanRef}>{count}+</span>
   }
-  
-  return <span>{count}</span>
+
+  return <span ref={spanRef}>{count}</span>
 }
