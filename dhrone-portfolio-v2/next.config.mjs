@@ -6,7 +6,17 @@ const nextConfig = {
     minimumCacheTTL: 60 * 60 * 24 * 30,
     remotePatterns: [
       { protocol: 'https', hostname: 'img.youtube.com' },
+      { protocol: 'https', hostname: 'i.ytimg.com' },
     ],
+  },
+  async redirects() {
+    return [
+      { source: '/projects/netyark-mall', destination: '/projects', permanent: true },
+      { source: '/projects/shop-auntie-araba', destination: '/projects', permanent: true },
+      { source: '/projects/rich-tym-luxe', destination: '/projects', permanent: true },
+      { source: '/projects/sweettreets', destination: '/projects', permanent: true },
+      { source: '/projects/rezar-aluminium', destination: '/projects', permanent: true },
+    ]
   },
   async headers() {
     return [

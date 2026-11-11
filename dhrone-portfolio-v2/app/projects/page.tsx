@@ -73,7 +73,7 @@ export default function ProjectsPage() {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
             {[
-              { value: '12', label: 'Projects Showcased' },
+              { value: String(projects.length), label: 'Projects Showcased' },
               { value: '5+', label: 'Industries' },
               { value: '100%', label: 'Client Satisfaction' },
               { value: '24/7', label: 'Support Available' },

@@ -69,7 +69,7 @@ export default function VideosPage() {
 
   return (
     <PageWrapper>
-      <link rel="preconnect" href="https://i.ytimg.com" />
+      <link rel="preconnect" href="https://img.youtube.com" />
       <link rel="preconnect" href="https://www.youtube-nocookie.com" />
       <div className="min-h-screen pt-24" style={{ backgroundColor: 'var(--bg)' }}>
         <div className="container mx-auto px-6">
