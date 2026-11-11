@@ -33,50 +33,45 @@ const langColors: Record<string, string> = {
 export default function GitHubStats() {
   const [user, setUser] = useState<GitHubUser | null>(null)
   const [repos, setRepos] = useState<GitHubRepo[]>([])
-  const [loading, setLoading] = useState(true)
+  const [loaded, setLoaded] = useState(false)
 
   const username = process.env.NEXT_PUBLIC_GITHUB_USERNAME || 'dromorongit'
 
   useEffect(() => {
+    let cancelled = false
     const fetchData = async () => {
       try {
-        const [userRes, reposRes] = await Promise.all([
-          fetch(`https://api.github.com/users/${username}`),
-          fetch(`https://api.github.com/users/${username}/repos?sort=stars&per_page=6`),
-        ])
-        const userData = await userRes.json()
-        const reposData = await reposRes.json()
-        setUser(userData)
-        setRepos(Array.isArray(reposData) ? reposData : [])
-      } catch (err) {
-        console.error('GitHub fetch error:', err)
+        const res = await fetch('/api/github-stats')
+        if (!res.ok) throw new Error('Failed')
+        const data = await res.json()
+        if (cancelled) return
+        setUser(data?.user ?? null)
+        setRepos(Array.isArray(data?.repos) ? data.repos : [])
+      } catch {
+        if (!cancelled) {
+          setUser(null)
+          setRepos([])
+        }
       } finally {
-        setLoading(false)
+        if (!cancelled) setLoaded(true)
       }
     }
     fetchData()
-  }, [username])
+    return () => {
+      cancelled = true
+    }
+  }, [])
 
-  if (loading) {
-    return (
-      <section className="section">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[...Array(4)].map((_, i) => (
-              <div key={i} className="card p-6 animate-pulse">
-                <div className="h-8 w-16 rounded bg-[var(--surface-hover)] mb-2" />
-                <div className="h-3 w-24 rounded bg-[var(--surface-hover)]" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    )
+  if (!loaded || (!user && repos.length === 0)) {
+    if (!loaded) {
+      return <section className="section"><div className="container mx-auto px-6 min-h-[520px]" /></section>
+    }
+    return <section className="section"><div className="container mx-auto px-6 min-h-[520px]" /></section>
   }
 
   return (
     <section className="section">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 min-h-[520px]">
         <div className="flex items-end justify-between mb-10">
           <div>
             <p className="text-xs font-semibold text-violet uppercase tracking-widest mb-3">Open Source</p>
@@ -88,35 +83,31 @@ export default function GitHubStats() {
           </a>
         </div>
 
-        {/* Stats */}
         {user && (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-            {
-              [
-                { icon: FiBook, label: 'Repositories', value: user.public_repos, color: '#6C63FF' },
-                { icon: FiUsers, label: 'Followers', value: user.followers, color: '#FF6B6B' },
-                { icon: FiStar, label: 'Total Stars', value: repos.reduce((a, r) => a + r.stargazers_count, 0), color: '#FFD93D' },
-                { icon: FiGitBranch, label: 'Total Forks', value: repos.reduce((a, r) => a + r.forks_count, 0), color: '#6C63FF' },
-              ].map((stat) => (
-                <div key={stat.label} className="card p-6 text-center">
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center mx-auto mb-3"
-                    style={{ backgroundColor: `${stat.color}20` }}>
-                    <stat.icon size={16} style={{ color: stat.color }} />
-                  </div>
-                  <p className="text-2xl font-extrabold mb-1" style={{ color: stat.color }}>{stat.value}</p>
-                  <p className="text-xs" style={{ color: 'var(--text-muted)' }}>{stat.label}</p>
+            {[
+              { icon: FiBook, label: 'Repositories', value: user.public_repos, color: '#6C63FF' },
+              { icon: FiUsers, label: 'Followers', value: user.followers, color: '#FF6B6B' },
+              { icon: FiStar, label: 'Total Stars', value: repos.reduce((a, r) => a + r.stargazers_count, 0), color: '#FFD93D' },
+              { icon: FiGitBranch, label: 'Total Forks', value: repos.reduce((a, r) => a + r.forks_count, 0), color: '#6C63FF' },
+            ].map((stat) => (
+              <div key={stat.label} className="card p-6 text-center min-h-[132px]">
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center mx-auto mb-3"
+                  style={{ backgroundColor: `${stat.color}20` }}>
+                  <stat.icon size={16} style={{ color: stat.color }} />
                 </div>
-              ))
-            }
+                <p className="text-2xl font-extrabold mb-1" style={{ color: stat.color }}>{stat.value}</p>
+                <p className="text-xs" style={{ color: 'var(--text-muted)' }}>{stat.label}</p>
+              </div>
+            ))}
           </div>
         )}
 
-        {/* Top Repos */}
         {repos.length > 0 && (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {repos.slice(0, 6).map((repo) => (
               <a key={repo.id} href={repo.html_url} target="_blank" rel="noopener noreferrer"
-                className="card p-5 group block">
+                className="card p-5 group block min-h-[140px]">
                 <div className="flex items-start justify-between mb-3">
                   <div className="w-8 h-8 rounded-lg bg-violet/10 flex items-center justify-center">
                     <FiBook size={14} className="text-violet" />

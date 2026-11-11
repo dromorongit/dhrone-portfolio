@@ -69,6 +69,8 @@ export default function VideosPage() {
 
   return (
     <PageWrapper>
+      <link rel="preconnect" href="https://i.ytimg.com" />
+      <link rel="preconnect" href="https://www.youtube-nocookie.com" />
       <div className="min-h-screen pt-24" style={{ backgroundColor: 'var(--bg)' }}>
         <div className="container mx-auto px-6">
           <div className="mb-12">
@@ -110,7 +112,7 @@ export default function VideosPage() {
                     alt={video.title}
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors" />

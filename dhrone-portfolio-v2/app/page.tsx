@@ -1,39 +1,11 @@
-﻿import { Suspense } from 'react'
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import Image from 'next/image'
 import { FiArrowRight, FiCode, FiSmartphone, FiVideo, FiGlobe, FiStar } from 'react-icons/fi'
 import { featuredProjects } from '@/app/data/projects'
-import GitHubStats from '@/components/GitHubStats'
+import GitHubStatsSection from '@/components/GitHubStatsSection'
 import Testimonials from '@/components/Testimonials'
 
 const techMarquee = ['Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL', 'MongoDB', 'Tailwind CSS', 'Electron', 'React Native', 'Prisma', 'Redis', 'AWS', 'Express', 'GraphQL', 'SQLite', 'Docker']
-
-function GitHubSkeleton() {
-  return (
-    <section className="section">
-      <div className="container mx-auto px-6">
-        <div className="h-8 w-48 rounded-lg mb-10" style={{ backgroundColor: 'var(--surface-hover)' }} />
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-          {[...Array(4)].map((_, i) => (
-            <div key={i} className="card p-6 animate-pulse">
-              <div className="h-8 w-16 rounded mb-2" style={{ backgroundColor: 'var(--surface-hover)' }} />
-              <div className="h-3 w-24 rounded" style={{ backgroundColor: 'var(--surface-hover)' }} />
-            </div>
-          ))}
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {[...Array(6)].map((_, i) => (
-            <div key={i} className="card p-5 animate-pulse">
-              <div className="h-4 w-32 rounded mb-3" style={{ backgroundColor: 'var(--surface-hover)' }} />
-              <div className="h-3 w-full rounded mb-2" style={{ backgroundColor: 'var(--surface-hover)' }} />
-              <div className="h-3 w-2/3 rounded" style={{ backgroundColor: 'var(--surface-hover)' }} />
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
 
 export default function HomePage() {
   return (
@@ -156,7 +128,7 @@ export default function HomePage() {
                 <div className="relative aspect-video overflow-hidden" style={{ backgroundColor: 'var(--surface-hover)' }}>
                   <Image src={project.image} alt={`${project.title} preview`} fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     loading="lazy" />
                   <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, transparent 60%, ${project.accentColor}25)` }} />
                 </div>
@@ -184,10 +156,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* GITHUB STATS — wrapped in Suspense so it never blocks page render */}
-      <Suspense fallback={<GitHubSkeleton />}>
-        <GitHubStats />
-      </Suspense>
+      {/* GITHUB STATS — lazy-loaded when scrolled into view */}
+      <GitHubStatsSection />
 
       <Testimonials />
 
