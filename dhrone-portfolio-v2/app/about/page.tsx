@@ -6,7 +6,7 @@ import AnimatedCounter from '@/components/AnimatedCounter'
 const timeline = [
   { year: '2020', title: 'Video Editing Beginnings', desc: 'Started with basic video editing and slideshow production.' },
   { year: '2021', title: 'First Music Video', desc: 'Shot first music video for BlaqMili — KaakaaMotobi Official Video.' },
-  { year: '2022', title: 'Professional Video Production', desc: 'Professional video directing/editing — Lipssy J music video and Netyark Mall marketing videos.' },
+  { year: '2022', title: 'Professional Video Production', desc: 'Professional video directing/editing — Lipssy J music video.' },
   { year: '2023', title: 'Web Development Start', desc: 'Began developing demo websites and learning production-ready development.' },
   { year: '2024', title: 'UI/UX Expert', desc: 'Delivered 13+ video projects, many photoshoots, mastered UI/UX web design.' },
   { year: '2025', title: 'First Live Web Projects', desc: 'Developed first 3 full web projects that went live in production.' },

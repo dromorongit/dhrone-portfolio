@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi'
+import { FiMenu, FiX, FiChevronDown, FiExternalLink } from 'react-icons/fi'
 import ThemeToggle from '@/components/ThemeToggle'
 
 const navLinks = [
@@ -65,11 +65,17 @@ export default function Navbar() {
   }, [softwareOpen])
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? 'bg-[var(--bg)]/95 backdrop-blur-md border-b border-[var(--border)]' : 'bg-transparent'
-    }`}>
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
+        <div className="relative flex items-center justify-between h-16">
+          <div
+            className={`absolute inset-0 rounded-2xl border border-[var(--border)] pointer-events-none transition-all duration-300 ${
+              scrolled
+                ? 'bg-[var(--surface)]/90 md:backdrop-blur-md shadow-xl'
+                : 'bg-[var(--surface)]/40 md:backdrop-blur-sm border-white/5'
+            }`}
+          />
+          <div className="relative flex items-center justify-between h-16 w-full px-4 md:px-6 z-10">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <div className="w-7 h-7 rounded-lg bg-violet/20 flex items-center justify-center overflow-hidden relative">
@@ -92,7 +98,7 @@ export default function Navbar() {
                   }`}>
                   {link.label}
                   {isActive && (
-                    <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-violet" />
+                    <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-violet rounded-full" />
                   )}
                 </Link>
               )
@@ -139,8 +145,8 @@ export default function Navbar() {
                    ? 'bg-violet text-white border-violet'
                    : 'text-violet border-violet/40 hover:bg-violet hover:text-white hover:border-violet'
                }`}>
-               School of DhroneTech
-             </Link>
+                School of DhroneTech <FiExternalLink size={13} className="ml-1" />
+              </Link>
           </nav>
 
           {/* Right: Toggle + CTA */}
@@ -158,6 +164,7 @@ export default function Navbar() {
             </button>
           </div>
         </div>
+      </div>
       </div>
 
       {/* Mobile Menu */}
