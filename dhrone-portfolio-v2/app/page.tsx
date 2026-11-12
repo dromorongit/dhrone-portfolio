@@ -40,8 +40,8 @@ export default function HomePage() {
           </defs>
         </svg>
 
-        <div className="container mx-auto px-6 pt-28 pb-20 lg:py-32 relative z-10">
-          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
+          <div className="container mx-auto px-6 pt-16 pb-16 lg:py-24 relative z-10">
+            <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-10 items-center">
             {/* Left column */}
             <div className="motion-safe:animate-fade-in">
               <div
@@ -53,9 +53,9 @@ export default function HomePage() {
                 <FiChevronRight size={14} className="text-white/50" />
               </div>
 
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight mb-6 text-white">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight mb-4 text-white">
                 I build{' '}
-                <span className="bg-gradient-to-r from-violet-500 via-fuchsia-500 to-pink-500 bg-clip-text text-transparent">
+                <span className="text-[#a78bfa] bg-[linear-gradient(90deg,#7c5cff,#ff5ca8)] bg-clip-text [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]">
                   digital
                 </span>
                 <br />
@@ -68,10 +68,10 @@ export default function HomePage() {
                 I design and build powerful software, modern platforms, and cinematic visuals.
               </p>
 
-              <div className="flex flex-col sm:flex-row flex-wrap gap-4 mb-14">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 mb-10">
                 <Link
                   href="/projects"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-semibold text-white bg-gradient-to-r from-violet-600 to-fuchsia-600 shadow-[0_12px_30px_rgba(124,58,237,0.35)] hover:opacity-95 transition-opacity"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-semibold text-white bg-[linear-gradient(135deg,#6d4aff,#9b5cff)] shadow-[0_12px_30px_rgba(124,58,237,0.35)] hover:opacity-95 transition-opacity"
                 >
                   View My Work <FiArrowRight size={16} />
                 </Link>
@@ -92,7 +92,7 @@ export default function HomePage() {
                   { value: '12+', label: 'Videos' },
                 ].map((s) => (
                   <div key={s.label} className="sm:px-6 first:sm:pl-0">
-                    <p className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-violet-400 to-fuchsia-500 bg-clip-text text-transparent">
+                    <p className="text-2xl sm:text-3xl font-extrabold text-[#a78bfa] bg-[linear-gradient(90deg,#a78bfa,#7c5cff)] bg-clip-text [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]">
                       {s.value}
                     </p>
                     <p className="text-xs sm:text-sm mt-1 text-gray-400">{s.label}</p>
@@ -107,11 +107,11 @@ export default function HomePage() {
                 {/* Layered glass panels (hidden on small screens) */}
                 <div
                   className="hidden md:block absolute -inset-2 rounded-3xl rotate-[7deg] translate-x-5 -translate-y-2 border"
-                  style={{ backgroundColor: 'rgba(139,92,246,0.12)', borderColor: 'rgba(255,255,255,0.08)' }}
+                  style={{ backgroundColor: 'rgba(124,92,255,0.18)', borderColor: 'rgba(167,139,250,0.35)' }}
                 />
                 <div
                   className="hidden md:block absolute inset-1 rounded-3xl -rotate-[2deg] -translate-x-4 translate-y-3 border"
-                  style={{ backgroundColor: 'rgba(236,72,153,0.08)', borderColor: 'rgba(255,255,255,0.06)' }}
+                  style={{ backgroundColor: 'rgba(124,92,255,0.18)', borderColor: 'rgba(167,139,250,0.35)' }}
                 />
 
                 {/* Dotted grid */}
@@ -137,12 +137,12 @@ export default function HomePage() {
                   className="absolute -top-3 -left-3 md:-top-4 md:-left-5 w-11 h-11 md:w-12 md:h-12 rounded-2xl border flex items-center justify-center shadow-lg md:backdrop-blur-sm"
                   style={{ backgroundColor: 'rgba(17,17,24,0.85)', borderColor: 'rgba(255,255,255,0.14)' }}
                 >
-                  <FiCode size={20} className="text-violet-400" />
+                  <FiCode size={20} className="text-[#a78bfa]" />
                 </div>
 
                 {/* Role pill */}
                 <div
-                  className="absolute -bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-3 px-4 py-2.5 rounded-2xl border shadow-xl whitespace-nowrap md:bg-[rgba(17,17,24,0.75)] md:backdrop-blur-sm"
+                  className="absolute -bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-3 px-4 py-2.5 rounded-2xl border shadow-xl whitespace-nowrap md:bg-[rgba(17,17,24,0.75)] md:backdrop-blur-sm"
                   style={{ backgroundColor: 'rgba(17,17,24,0.92)', borderColor: 'rgba(255,255,255,0.12)' }}
                 >
                   <span className="w-8 h-8 rounded-xl bg-violet-600/90 flex items-center justify-center shrink-0">
