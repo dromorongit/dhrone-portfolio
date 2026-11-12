@@ -152,7 +152,7 @@ export default function Navbar() {
           {/* Right: Toggle + CTA */}
           <div className="hidden lg:flex items-center gap-2">
             <ThemeToggle />
-            <Link href="/contact" className="btn-primary text-sm py-2 px-4">Hire Me</Link>
+            <Link href="/contact" className="btn-primary text-sm py-2 px-4 bg-[linear-gradient(135deg,#6d4aff,#9b5cff)]">Hire Me</Link>
           </div>
 
           {/* Mobile Toggle */}
@@ -214,7 +214,7 @@ export default function Navbar() {
                }`}>
                🎓 School of DhroneTech
              </Link>
-             <Link href="/contact" className="col-span-2 btn-primary mt-2 justify-center">Hire Me</Link>
+              <Link href="/contact" className="col-span-2 btn-primary mt-2 justify-center bg-[linear-gradient(135deg,#6d4aff,#9b5cff)]">Hire Me</Link>
           </nav>
         </div>
       )}

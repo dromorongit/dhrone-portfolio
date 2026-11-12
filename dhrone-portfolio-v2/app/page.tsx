@@ -20,7 +20,7 @@ export default function HomePage() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              'radial-gradient(700px 500px at 0% 0%, rgba(236,72,153,0.18), transparent 60%), radial-gradient(800px 520px at 0% 100%, rgba(88,28,135,0.28), transparent 60%)',
+              'radial-gradient(700px 500px at 0% 0%, rgba(236,72,153,0.28), transparent 45%), radial-gradient(800px 520px at 0% 100%, rgba(124,58,237,0.30), transparent 45%)',
           }}
         />
         {/* Curved arc lines */}
@@ -106,11 +106,11 @@ export default function HomePage() {
               <div className="relative w-[280px] h-[360px] sm:w-[320px] sm:h-[400px] lg:w-[360px] lg:h-[440px]">
                 {/* Layered glass panels (hidden on small screens) */}
                 <div
-                  className="hidden md:block absolute -inset-2 rounded-3xl rotate-[7deg] translate-x-5 -translate-y-2 border"
+                  className="hidden md:block absolute -inset-2 rounded-3xl -rotate-[2deg] translate-x-5 -translate-y-2 border"
                   style={{ backgroundColor: 'rgba(124,92,255,0.18)', borderColor: 'rgba(167,139,250,0.35)' }}
                 />
                 <div
-                  className="hidden md:block absolute inset-1 rounded-3xl -rotate-[2deg] -translate-x-4 translate-y-3 border"
+                  className="hidden md:block absolute inset-1 rounded-3xl rotate-[5deg] -translate-x-4 translate-y-3 border"
                   style={{ backgroundColor: 'rgba(124,92,255,0.18)', borderColor: 'rgba(167,139,250,0.35)' }}
                 />
 
@@ -135,17 +135,17 @@ export default function HomePage() {
                 {/* Floating code badge */}
                 <div
                   className="absolute -top-3 -left-3 md:-top-4 md:-left-5 w-11 h-11 md:w-12 md:h-12 rounded-2xl border flex items-center justify-center shadow-lg md:backdrop-blur-sm"
-                  style={{ backgroundColor: 'rgba(17,17,24,0.85)', borderColor: 'rgba(255,255,255,0.14)' }}
+                  style={{ backgroundColor: 'rgba(20,16,40,0.85)', borderColor: 'rgba(255,255,255,0.12)' }}
                 >
-                  <FiCode size={20} className="text-[#a78bfa]" />
+                  <FiCode size={24} className="text-[#a78bfa]" />
                 </div>
 
                 {/* Role pill */}
                 <div
-                  className="absolute -bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-3 px-4 py-2.5 rounded-2xl border shadow-xl whitespace-nowrap md:bg-[rgba(17,17,24,0.75)] md:backdrop-blur-sm"
+                  className="absolute -bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-3 px-4 py-2.5 rounded-2xl border shadow-xl whitespace-nowrap md:bg-[rgba(17,17,24,0.75)] md:backdrop-blur-sm"
                   style={{ backgroundColor: 'rgba(17,17,24,0.92)', borderColor: 'rgba(255,255,255,0.12)' }}
                 >
-                  <span className="w-8 h-8 rounded-xl bg-violet-600/90 flex items-center justify-center shrink-0">
+                  <span className="w-7 h-7 rounded-xl bg-violet-600/90 flex items-center justify-center shrink-0">
                     <FiBriefcase size={15} className="text-white" />
                   </span>
                   <span className="text-xs sm:text-sm font-semibold text-white">
