@@ -12,7 +12,7 @@ export default function HomePage() {
     <div>
       {/* HERO */}
       <section
-        className="min-h-[100svh] flex items-start relative overflow-hidden"
+        className="min-h-[100svh] flex items-start relative overflow-hidden pt-[144px] pb-16 lg:pt-32 lg:pb-12"
         style={{ backgroundColor: '#0a0a14' }}
       >
         {/* Background glows (CSS gradients, no blur filters) */}
@@ -65,7 +65,7 @@ export default function HomePage() {
           </defs>
         </svg>
 
-          <div className="container mx-auto px-6 pt-[144px] pb-16 lg:pt-32 lg:pb-12 relative z-10">
+          <div className="container mx-auto px-6 relative z-10">
             <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-10 items-center">
             {/* Left column */}
             <div className="motion-safe:animate-fade-in">
