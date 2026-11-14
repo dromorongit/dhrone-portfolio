@@ -20,7 +20,18 @@ export default function HomePage() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              'radial-gradient(700px 500px at 0% 0%, rgba(236,72,153,0.28), transparent 45%), radial-gradient(800px 520px at 0% 100%, rgba(124,58,237,0.30), transparent 45%)',
+              'radial-gradient(700px 500px at 0% 0%, rgba(236,72,153,0.38), transparent 45%), radial-gradient(circle at 0% 100%, rgba(124,58,237,0.45), transparent 55%), radial-gradient(700px 450px at 100% 100%, rgba(236,72,153,0.16), transparent 55%)',
+          }}
+        />
+        {/* Bottom arc decoration */}
+        <div
+          className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[140%] h-[360px] pointer-events-none hidden md:block"
+          style={{
+            borderRadius: '50%',
+            border: '2px solid transparent',
+            borderImage:
+              'linear-gradient(90deg,rgba(124,92,255,0.6),rgba(255,92,168,0.6)) 1',
+            boxShadow: '0 -10px 60px rgba(168,85,247,0.35)',
           }}
         />
         {/* Curved arc lines */}
@@ -71,7 +82,7 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row flex-wrap gap-3 mb-10">
                 <Link
                   href="/projects"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-semibold text-white bg-[linear-gradient(135deg,#6d4aff,#9b5cff)] shadow-[0_12px_30px_rgba(124,58,237,0.35)] hover:opacity-95 transition-opacity"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-semibold text-white bg-[linear-gradient(135deg,#6d4aff_0%,#a259ff_55%,#ff5ca8_100%)] shadow-[0_10px_30px_rgba(124,92,255,0.45)] hover:opacity-95 transition-opacity"
                 >
                   View My Work <FiArrowRight size={16} />
                 </Link>
@@ -92,7 +103,7 @@ export default function HomePage() {
                   { value: '12+', label: 'Videos' },
                 ].map((s) => (
                   <div key={s.label} className="sm:px-6 first:sm:pl-0">
-                    <p className="text-2xl sm:text-3xl font-extrabold text-[#a78bfa] bg-[linear-gradient(90deg,#a78bfa,#7c5cff)] bg-clip-text [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]">
+                    <p className="text-2xl sm:text-3xl font-extrabold text-[#a78bfa] bg-[linear-gradient(90deg,#8b5cff,#c04dff)] bg-clip-text [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]">
                       {s.value}
                     </p>
                     <p className="text-xs sm:text-sm mt-1 text-gray-400">{s.label}</p>
@@ -106,12 +117,18 @@ export default function HomePage() {
               <div className="relative w-[280px] h-[360px] sm:w-[320px] sm:h-[400px] lg:w-[360px] lg:h-[440px]">
                 {/* Layered glass panels (hidden on small screens) */}
                 <div
-                  className="hidden md:block absolute -inset-2 rounded-3xl -rotate-[2deg] translate-x-5 -translate-y-2 border"
-                  style={{ backgroundColor: 'rgba(124,92,255,0.18)', borderColor: 'rgba(167,139,250,0.35)' }}
+                  className="hidden md:block absolute -inset-4 rounded-3xl -rotate-[4deg] -translate-x-4 -translate-y-1 border"
+                  style={{
+                    background: 'linear-gradient(145deg,rgba(124,92,255,0.28),rgba(167,92,255,0.08))',
+                    borderColor: 'rgba(190,170,255,0.35)',
+                  }}
                 />
                 <div
-                  className="hidden md:block absolute inset-1 rounded-3xl rotate-[5deg] -translate-x-4 translate-y-3 border"
-                  style={{ backgroundColor: 'rgba(124,92,255,0.18)', borderColor: 'rgba(167,139,250,0.35)' }}
+                  className="hidden md:block absolute -inset-4 rounded-3xl rotate-[6deg] translate-x-4 translate-y-2 border"
+                  style={{
+                    background: 'linear-gradient(145deg,rgba(124,92,255,0.28),rgba(167,92,255,0.08))',
+                    borderColor: 'rgba(190,170,255,0.35)',
+                  }}
                 />
 
                 {/* Dotted grid */}

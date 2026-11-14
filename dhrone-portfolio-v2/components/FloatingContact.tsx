@@ -5,7 +5,7 @@ export default function FloatingContact() {
   return (
     <Link
       href="/contact"
-      className="fixed bottom-6 right-6 z-40 inline-flex items-center gap-2.5 px-5 py-3 rounded-full shadow-[0_12px_30px_rgba(124,58,237,0.35)] text-white text-sm font-semibold transition-transform hover:scale-105 bg-[linear-gradient(135deg,#6d4aff,#9b5cff)]"
+      className="fixed bottom-6 right-6 z-40 inline-flex items-center gap-2.5 px-5 py-3 rounded-full shadow-[0_10px_30px_rgba(124,92,255,0.45)] text-white text-sm font-semibold transition-transform hover:scale-105 bg-[linear-gradient(135deg,#6d4aff_0%,#a259ff_55%,#ff5ca8_100%)]"
       aria-label="Let's Talk"
     >
       <span className="relative inline-flex">
