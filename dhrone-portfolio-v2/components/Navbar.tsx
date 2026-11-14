@@ -69,7 +69,7 @@ export default function Navbar() {
       <div className="container mx-auto px-6">
         <div className="relative flex items-center justify-between h-16">
           <div
-            className={`absolute inset-0 rounded-2xl border border-[var(--border)] pointer-events-none transition-all duration-300 bg-[var(--bg)]/95 ${scrolled ? 'md:bg-[var(--surface)]/90 md:backdrop-blur-md shadow-xl' : 'md:bg-[var(--surface)]/40 md:backdrop-blur-sm border-white/5'}`}
+            className={`absolute inset-0 rounded-2xl border border-[var(--border)] pointer-events-none transition-all duration-300 nav-solid-mobile ${scrolled ? 'md:bg-[var(--surface)]/90 md:backdrop-blur-md shadow-xl' : 'md:bg-[var(--surface)]/40 md:backdrop-blur-sm border-white/5'}`}
           />
           <div className="relative flex items-center justify-between h-16 w-full px-4 md:px-6 z-10">
           {/* Logo */}
@@ -165,7 +165,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="lg:hidden bg-[var(--bg)] border-b border-[var(--border)]">
+        <div className="lg:hidden nav-solid-mobile border-b border-[var(--border)]">
           <nav className="container mx-auto px-6 py-4 grid grid-cols-2 gap-1">
             {navLinks.map((link) => {
               const isActive = pathname === link.href

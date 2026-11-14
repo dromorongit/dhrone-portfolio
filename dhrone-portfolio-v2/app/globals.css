@@ -184,6 +184,10 @@ body {
   }
 
 @media (max-width: 767px) {
+  .nav-solid-mobile {
+    background-color: var(--bg) !important;
+  }
+
   .marquee-track {
     animation-duration: 45s;
   }

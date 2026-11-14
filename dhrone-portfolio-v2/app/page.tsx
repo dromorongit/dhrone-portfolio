@@ -12,7 +12,7 @@ export default function HomePage() {
     <div>
       {/* HERO */}
       <section
-        className="min-h-screen flex items-center relative overflow-hidden"
+        className="min-h-[100svh] flex items-start relative overflow-hidden"
         style={{ backgroundColor: '#0a0a14' }}
       >
         {/* Background glows (CSS gradients, no blur filters) */}
@@ -65,7 +65,7 @@ export default function HomePage() {
           </defs>
         </svg>
 
-          <div className="container mx-auto px-6 pt-32 pb-16 lg:py-24 relative z-10">
+          <div className="container mx-auto px-6 pt-[144px] pb-16 lg:pt-32 lg:pb-12 relative z-10">
             <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-10 items-center">
             {/* Left column */}
             <div className="motion-safe:animate-fade-in">
@@ -159,7 +159,7 @@ export default function HomePage() {
                   className="relative w-full h-full rounded-3xl overflow-hidden border shadow-[0_30px_60px_rgba(0,0,0,0.45)] md:rotate-[3deg]"
                   style={{ borderColor: 'rgba(255,255,255,0.12)', backgroundColor: '#111118' }}
                 >
-                  <Image src="/images/dhrone.jpg" alt="Narh H.P Dromor" fill className="object-cover" priority sizes="(max-width: 1024px) 90vw, 480px" />
+                  <Image src="/images/dhrone.jpg" alt="Narh H.P Dromor" fill className="object-cover" priority quality={90} sizes="(max-width: 1024px) 90vw, 480px" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a14]/60 via-transparent to-transparent" />
                 </div>
 
