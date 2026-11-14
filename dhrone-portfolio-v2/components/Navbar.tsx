@@ -42,6 +42,18 @@ export default function Navbar() {
   }, [])
 
   useEffect(() => {
+    const html = document.documentElement
+    const body = document.body
+    if (open) {
+      html.style.overflow = 'hidden'
+      body.style.overflow = 'hidden'
+    } else {
+      html.style.overflow = ''
+      body.style.overflow = ''
+    }
+  }, [open])
+
+  useEffect(() => {
     setOpen(false)
     setSoftwareOpen(false)
     setMobileSoftwareOpen(false)
@@ -165,8 +177,16 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="lg:hidden nav-solid-mobile border-b border-[var(--border)]">
-          <nav className="container mx-auto px-6 py-4 grid grid-cols-2 gap-1">
+        <>
+          <div
+            className="fixed inset-0 z-40 bg-black/50 lg:hidden"
+            onClick={() => setOpen(false)}
+            aria-hidden="true"
+          />
+          <div
+            className="lg:hidden nav-solid-mobile border border-[var(--border)] rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)] mt-2 max-h-[calc(100svh-6rem)] overflow-y-auto"
+          >
+            <nav className="mx-auto px-6 py-5 grid grid-cols-2 gap-1">
             {navLinks.map((link) => {
               const isActive = pathname === link.href
               return (
@@ -181,13 +201,13 @@ export default function Navbar() {
               )
             })}
              {/* Software mobile */}
-             <button
-               onClick={() => setMobileSoftwareOpen((prev) => !prev)}
-               className={`col-span-2 px-4 py-3 rounded-xl text-sm font-semibold text-center transition-colors border ${
-                 isSoftwareActive ? 'bg-coral text-white border-coral' : 'text-coral border-coral/40 hover:bg-coral hover:text-white hover:border-coral'
-               }`}>
-               💻 Software <FiChevronDown size={16} />
-             </button>
+              <button
+                onClick={() => setMobileSoftwareOpen((prev) => !prev)}
+                className={`col-span-2 px-4 py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-1 whitespace-nowrap transition-colors border ${
+                  isSoftwareActive ? 'bg-coral text-white border-coral' : 'text-coral border-coral/40 hover:bg-coral hover:text-white hover:border-coral'
+                }`}>
+                💻 Software <FiChevronDown size={16} />
+              </button>
              {mobileSoftwareOpen && (
                <>
                  {softwareLinks.map((item) => {
@@ -210,10 +230,11 @@ export default function Navbar() {
                }`}>
                🎓 School of DhroneTech
              </Link>
-               <Link href="/contact" className="col-span-2 btn-primary mt-2 justify-center !bg-[linear-gradient(135deg,#6d4aff_0%,#a259ff_55%,#ff5ca8_100%)]">Hire Me</Link>
-          </nav>
-        </div>
-      )}
+                <Link href="/contact" className="col-span-2 btn-primary mt-2 justify-center !bg-[linear-gradient(135deg,#6d4aff_0%,#a259ff_55%,#ff5ca8_100%)]">Hire Me</Link>
+           </nav>
+         </div>
+       </>
+       )}
     </header>
   )
 }
