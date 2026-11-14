@@ -65,7 +65,7 @@ export default function HomePage() {
           </defs>
         </svg>
 
-          <div className="container mx-auto px-6 pt-16 pb-16 lg:py-24 relative z-10">
+          <div className="container mx-auto px-6 pt-32 pb-16 lg:py-24 relative z-10">
             <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-10 items-center">
             {/* Left column */}
             <div className="motion-safe:animate-fade-in">
@@ -128,7 +128,7 @@ export default function HomePage() {
 
             {/* Right column */}
             <div className="flex justify-center lg:justify-end">
-              <div className="relative w-[280px] h-[360px] sm:w-[320px] sm:h-[400px] lg:w-[360px] lg:h-[440px]">
+              <div className="relative w-full max-w-[360px] h-[360px] sm:h-[400px] lg:w-[360px] lg:h-[440px]">
                 {/* Layered glass panels (hidden on small screens) */}
                 <div
                   className="hidden md:block absolute -inset-4 rounded-3xl -rotate-[4deg] -translate-x-4 -translate-y-1 border"
@@ -159,7 +159,7 @@ export default function HomePage() {
                   className="relative w-full h-full rounded-3xl overflow-hidden border shadow-[0_30px_60px_rgba(0,0,0,0.45)] md:rotate-[3deg]"
                   style={{ borderColor: 'rgba(255,255,255,0.12)', backgroundColor: '#111118' }}
                 >
-                  <Image src="/images/dhrone.jpg" alt="Narh H.P Dromor" fill className="object-cover" priority sizes="320px" />
+                  <Image src="/images/dhrone.jpg" alt="Narh H.P Dromor" fill className="object-cover" priority sizes="(max-width: 1024px) 90vw, 480px" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a14]/60 via-transparent to-transparent" />
                 </div>
 
@@ -172,10 +172,9 @@ export default function HomePage() {
                 </div>
 
                 {/* Role pill */}
-                <div
-                  className="absolute -bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-3 px-4 py-2.5 rounded-2xl border shadow-xl whitespace-nowrap md:bg-[rgba(17,17,24,0.75)] md:backdrop-blur-sm"
-                  style={{ backgroundColor: 'rgba(17,17,24,0.92)', borderColor: 'rgba(255,255,255,0.12)' }}
-                >
+                  <div
+                    className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-3 px-4 py-2.5 rounded-2xl border shadow-xl whitespace-nowrap md:-bottom-5 md:bg-[rgba(17,17,24,0.75)] md:backdrop-blur-sm"
+                  >
                   <span className="w-7 h-7 rounded-xl bg-violet-600/90 flex items-center justify-center shrink-0">
                     <FiBriefcase size={15} className="text-white" />
                   </span>
