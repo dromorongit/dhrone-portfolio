@@ -23,17 +23,31 @@ export default function HomePage() {
               'radial-gradient(700px 500px at 0% 0%, rgba(236,72,153,0.38), transparent 45%), radial-gradient(circle at 0% 100%, rgba(124,58,237,0.45), transparent 55%), radial-gradient(700px 450px at 100% 100%, rgba(236,72,153,0.16), transparent 55%)',
           }}
         />
-        {/* Bottom arc decoration */}
+        {/* Bottom faint purple fill */}
         <div
-          className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[140%] h-[360px] pointer-events-none hidden md:block"
+          className="absolute bottom-0 left-0 w-full h-[200px] pointer-events-none hidden md:block z-0"
           style={{
-            borderRadius: '50%',
-            border: '2px solid transparent',
-            borderImage:
-              'linear-gradient(90deg,rgba(124,92,255,0.6),rgba(255,92,168,0.6)) 1',
-            boxShadow: '0 -10px 60px rgba(168,85,247,0.35)',
+            background: 'radial-gradient(circle at 50% 0%, rgba(124,58,237,0.06), transparent 60%)',
           }}
+          aria-hidden="true"
         />
+        {/* Bottom curved gradient arc */}
+        <svg
+          className="absolute bottom-0 left-0 w-full h-[160px] pointer-events-none hidden md:block z-0"
+          style={{ filter: 'drop-shadow(0 0 18px rgba(168,85,247,0.6))' }}
+          viewBox="0 0 1440 160"
+          preserveAspectRatio="none"
+          fill="none"
+          aria-hidden="true"
+        >
+          <defs>
+            <linearGradient id="hero-bottom-arc" x1="0" y1="0" x2="1" y2="0">
+              <stop stopColor="#7c5cff" />
+              <stop offset="1" stopColor="#ff5ca8" />
+            </linearGradient>
+          </defs>
+          <path d="M0,150 Q720,20 1440,150" stroke="url(#hero-bottom-arc)" strokeWidth="2" />
+        </svg>
         {/* Curved arc lines */}
         <svg
           className="absolute -bottom-24 -left-24 w-[900px] h-[520px] opacity-[0.12] pointer-events-none"
