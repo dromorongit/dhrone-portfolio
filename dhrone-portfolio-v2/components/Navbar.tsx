@@ -77,7 +77,8 @@ export default function Navbar() {
   }, [softwareOpen])
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <>
+      <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       <div className="container mx-auto px-6">
         <div className="relative flex items-center justify-between h-16">
           <div
@@ -177,16 +178,10 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {open && (
-        <>
-          <div
-            className="fixed inset-0 z-40 bg-black/50 lg:hidden"
-            onClick={() => setOpen(false)}
-            aria-hidden="true"
-          />
-          <div
-            className="lg:hidden nav-solid-mobile border border-[var(--border)] rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)] mt-2 max-h-[calc(100svh-6rem)] overflow-y-auto"
-          >
-            <nav className="mx-auto px-6 py-5 grid grid-cols-2 gap-1">
+        <div
+          className="lg:hidden nav-solid-mobile border border-[var(--border)] rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)] mt-2 max-h-[calc(100svh-6rem)] overflow-y-auto"
+        >
+          <nav className="mx-auto px-6 py-5 grid grid-cols-2 gap-1">
             {navLinks.map((link) => {
               const isActive = pathname === link.href
               return (
@@ -231,10 +226,17 @@ export default function Navbar() {
                🎓 School of DhroneTech
              </Link>
                 <Link href="/contact" className="col-span-2 btn-primary mt-2 justify-center !bg-[linear-gradient(135deg,#6d4aff_0%,#a259ff_55%,#ff5ca8_100%)]">Hire Me</Link>
-           </nav>
-         </div>
-       </>
-       )}
+            </nav>
+          </div>
+      )}
     </header>
+    {open && (
+      <div
+        className="fixed inset-0 z-40 bg-black/50 lg:hidden"
+        onClick={() => setOpen(false)}
+        aria-hidden="true"
+      />
+    )}
+    </>
   )
 }
