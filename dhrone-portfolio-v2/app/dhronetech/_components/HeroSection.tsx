@@ -57,7 +57,7 @@ export default function HeroSection() {
             <span className="dt-hero-eyebrow-line" aria-hidden="true" />
           </p>
 
-          <h1 id="hero-title" className="dt-hero-h1" style={{ fontSize: 'clamp(2.6rem, 7.3vw, 11rem)', lineHeight: 0.64 }}>
+          <h1 id="hero-title" className="dt-hero-h1">
             {hero.h1[0]} <br />
             Our <span className="dt-hero-h1-gold">{hero.h1[1]}</span>
           </h1>
@@ -85,7 +85,7 @@ export default function HeroSection() {
             >
               {hero.secondaryCta.label}
               <span className="dt-hero-play-circle">
-                <FaPlay size={10} style={{ position: 'relative', left: '1px' }} />
+                <FaPlay size={10} style={{ color: '#0B1530', position: 'relative', left: '1px' }} />
               </span>
             </a>
           </div>
