@@ -517,7 +517,9 @@
 }
 
 .dt-hero-h1 {
+  font-size: clamp(2.1rem, 4.1vw, 4rem);
   font-weight: 800;
+  line-height: 1.14;
   letter-spacing: -0.01em;
   color: var(--dt-white);
   margin: 0 0 24px 0;
@@ -525,6 +527,7 @@
 
 .dt-hero-h1-gold {
   color: var(--dt-gold-500);
+  white-space: nowrap;
 }
 
 .dt-hero-p {
@@ -549,6 +552,7 @@
   color: #0B1530;
   padding-inline: 32px;
   box-shadow: 0 0 16px rgba(245, 185, 33, 0.5);
+  gap: 10px;
 }
 
 .dt-hero-btn-about {
@@ -557,6 +561,7 @@
   color: #fff;
   padding-left: 28px;
   padding-right: 10px;
+  gap: 14px;
 }
 
 .dt-hero-play-circle {
@@ -567,7 +572,8 @@
   height: 26px;
   border-radius: 50%;
   background: #fff;
-  flex-shrink: 0;
+  flex: none;
+  color: #0B1530;
 }
 
 /* Trust badges */
