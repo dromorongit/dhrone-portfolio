@@ -1,9 +1,6 @@
 import type { Metadata } from 'next'
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
-import FloatingContact from '@/components/FloatingContact'
 import { ThemeProvider } from '@/components/ThemeProvider'
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -50,10 +47,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={plusJakartaSans.variable}>
       <body className={plusJakartaSans.className}>
         <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem={false}>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-          <FloatingContact />
+          {children}
         </ThemeProvider>
       </body>
     </html>
