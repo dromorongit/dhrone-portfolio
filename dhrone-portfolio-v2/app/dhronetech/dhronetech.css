@@ -517,12 +517,18 @@
 }
 
 .dt-hero-h1 {
-  font-size: clamp(2.1rem, 4.1vw, 4rem);
+  font-size: clamp(2.4rem, 5.4vw, 4.6rem);
   font-weight: 800;
-  line-height: 1.14;
+  line-height: 0.87;
   letter-spacing: -0.01em;
   color: var(--dt-white);
   margin: 0 0 24px 0;
+}
+
+@media (max-width: 639px) {
+  .dt-hero-h1 {
+    line-height: 1.05;
+  }
 }
 
 .dt-hero-h1-gold {
