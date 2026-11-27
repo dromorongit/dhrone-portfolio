@@ -625,6 +625,7 @@
 .dt-header-logo {
   width: auto;
   height: calc(var(--dt-header-h) * 0.62);
+  object-fit: contain;
   display: block;
 }
 

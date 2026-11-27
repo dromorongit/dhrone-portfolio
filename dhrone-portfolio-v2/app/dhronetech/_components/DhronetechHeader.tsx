@@ -133,7 +133,7 @@ export default function DhronetechHeader() {
             aria-label="Main navigation"
             style={{
               marginLeft: 'clamp(40px, 6vw, 96px)',
-              gap: 'clamp(20px, 2.6vw, 36px)',
+              gap: 'clamp(16px, 1.7vw, 24px)',
               fontSize: 'clamp(13px, 1.1vw, 16px)',
             }}
           >

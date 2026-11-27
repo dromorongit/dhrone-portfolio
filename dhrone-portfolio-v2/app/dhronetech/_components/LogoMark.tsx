@@ -15,7 +15,7 @@ export default function LogoMark({
   const [logoSrc, setLogoSrc] = useState<string | null>(null)
 
   useEffect(() => {
-    const candidates = ['/images/dhronetech/logo.svg', '/images/dhronetech/logo.webp', '/images/dhronetech/logo.jpg']
+    const candidates = ['/images/dhronetech/logo-light.svg', '/images/dhronetech/logo-light.webp', '/images/dhronetech/logo-light.png']
     let cancelled = false
     const tryNext = (i: number) => {
       if (i >= candidates.length) return
