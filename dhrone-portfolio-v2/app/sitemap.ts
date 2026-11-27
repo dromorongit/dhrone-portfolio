@@ -3,6 +3,7 @@ import { projects } from '@/app/data/projects'
 import { getAllPosts } from '@/lib/blog'
 
 const BASE_URL = 'https://dromornarh-production.up.railway.app'
+const DHRONETECH_URL = 'https://www.dromornarh.com'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
@@ -19,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/academy`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.9 },
     { url: `${BASE_URL}/apps/dhream-pos`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: `${BASE_URL}/apps/dhream-finance`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${DHRONETECH_URL}/dhronetech`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.9 },
   ]
 
   const projectPages = projects.map((project) => ({
