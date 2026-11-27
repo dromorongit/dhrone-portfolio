@@ -10,8 +10,11 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-[560px] lg:min-h-[640px] flex items-center overflow-hidden"
-      style={{ backgroundColor: 'var(--dt-navy-900)' }}
+      className="relative flex items-center overflow-hidden py-16"
+      style={{
+        backgroundColor: 'var(--dt-navy-900)',
+        minHeight: 'min(720px, calc(100svh - var(--dt-header-h)))',
+      }}
       aria-labelledby="hero-title"
     >
       <div className="absolute inset-0 z-0">
@@ -37,14 +40,17 @@ export default function HeroSection() {
           style={{ background: 'linear-gradient(180deg, rgba(6,18,46,0.85) 0%, rgba(6,18,46,0.55) 100%)' }}
           aria-hidden="true"
         />
-        <div className="dt-swoosh" aria-hidden="true" />
       </div>
 
       <div className="dt-container-lg relative z-10 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="max-w-2xl">
+          <div className="w-full max-w-2xl min-w-0">
             <p className="dt-eyebrow">{hero.eyebrow}</p>
-            <h1 id="hero-title" className="dt-h1 mb-6">
+            <h1
+              id="hero-title"
+              className="dt-h1 mb-6"
+              style={{ fontSize: 'clamp(2.5rem, 5.2vw, 4.5rem)', lineHeight: 1.05 }}
+            >
               {hero.h1[0]} <br />
               <span className="dt-h1-gold">{hero.h1[1]}</span>
             </h1>
@@ -69,7 +75,7 @@ export default function HeroSection() {
               </a>
             </div>
 
-            <div className="flex flex-wrap gap-3" role="list" aria-label="Trust badges">
+            <div className="grid grid-cols-2 xl:grid-cols-4 gap-2" role="list" aria-label="Trust badges">
               {hero.trustBadges.map((badge) => (
                 <div key={badge.label} className="dt-trust-badge" role="listitem">
                   <svg
@@ -108,3 +114,4 @@ export default function HeroSection() {
     </section>
   )
 }
+

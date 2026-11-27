@@ -3,10 +3,23 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { FiArrowRight, FiPhone, FiMail } from 'react-icons/fi'
+import { FaQuoteLeft } from 'react-icons/fa'
+import { useState, useEffect } from 'react'
 import { dhronetechContent } from '@/app/data/dhronetech'
 
 export default function FounderSection() {
   const { founder, testimonial, contact, assets } = dhronetechContent
+  const [founderCutout, setFounderCutout] = useState(false)
+
+  useEffect(() => {
+    const img = new window.Image()
+    img.onload = () => setFounderCutout(true)
+    img.onerror = () => setFounderCutout(false)
+    img.src = '/images/dhronetech/founder.webp'
+  }, [])
+
+  const founderSrc = founderCutout ? '/images/dhronetech/founder.webp' : assets.founder
+  const founderFit = founderCutout ? 'object-contain object-bottom' : 'object-cover object-top'
 
   return (
     <section
@@ -17,26 +30,35 @@ export default function FounderSection() {
     >
       <div className="dt-container-lg">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
-          <article className="dt-card-navy p-8 lg:p-10 relative overflow-hidden">
+          <article className="dt-card-navy relative overflow-hidden rounded-3xl min-h-[340px] p-8 lg:p-10">
             <div
               className="absolute inset-0 bg-gradient-to-br from-[var(--dt-blue-500)]/10 via-transparent to-transparent"
               aria-hidden="true"
             />
-            <div className="relative z-10">
+            <div className="relative z-10 max-w-full lg:max-w-[58%]">
               <p className="dt-eyebrow" style={{ color: 'var(--dt-gold-500)' }}>{founder.eyebrow}</p>
               <h2 id="founder-title" className="text-2xl font-bold text-white mb-4">{founder.name}</h2>
-              <p className="text-[var(--dt-text-muted)] text-lg leading-relaxed mb-8">{founder.text}</p>
-              <Link href={founder.cta.href} className="dt-btn dt-btn-navy">
+              <p className="text-white/85 text-lg leading-relaxed mb-8">{founder.text}</p>
+              <Link href={founder.cta.href} className="dt-btn dt-btn-primary">
                 {founder.cta.label}
                 <FiArrowRight size={18} />
               </Link>
             </div>
-            <div className="absolute bottom-0 right-0 w-[200px] h-[200px] lg:w-[280px] lg:h-[280px] -translate-y-1/4 -translate-x-1/4 opacity-50" aria-hidden="true">
+            <div className="hidden lg:block absolute bottom-0 right-0 w-[42%] h-[88%]">
               <Image
-                src={assets.founder}
+                src={founderSrc}
                 alt=""
                 fill
-                className="object-cover rounded-full"
+                className={`${founderFit} rounded-tl-[2rem]`}
+                style={{ objectPosition: 'top center' }}
+              />
+            </div>
+            <div className="lg:hidden relative mt-6 w-full h-[260px]">
+              <Image
+                src={founderSrc}
+                alt=""
+                fill
+                className={`${founderFit} rounded-tl-[2rem]`}
                 style={{ objectPosition: 'top center' }}
               />
             </div>
@@ -46,14 +68,11 @@ export default function FounderSection() {
             <div>
               <p className="dt-eyebrow">{testimonial.eyebrow}</p>
               <div className="flex items-start gap-4 mt-6">
-                <svg
-                  className="w-12 h-12 text-[var(--dt-blue-500)]/30 flex-shrink-0 mt-1"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
+                <FaQuoteLeft
+                  size={32}
+                  className="text-[var(--dt-blue-500)] flex-shrink-0 mt-1"
                   aria-hidden="true"
-                >
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.433.917-3.995 3.638-3.995 5.849h4v7.051h-6.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.995 3.638-3.995 5.849h3.983v7.051h-6.983z" />
-                </svg>
+                />
                 <blockquote className="flex-1">
                   <p className="text-lg lg:text-xl text-[var(--dt-text-dark)] leading-relaxed italic">&ldquo;{testimonial.quote}&rdquo;</p>
                   <footer className="mt-4 text-[var(--dt-text-muted)]">— {testimonial.attribution}</footer>
@@ -115,3 +134,5 @@ export default function FounderSection() {
     </section>
   )
 }
+
+

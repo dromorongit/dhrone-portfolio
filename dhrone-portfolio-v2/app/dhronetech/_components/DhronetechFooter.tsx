@@ -20,7 +20,7 @@ export default function DhronetechFooter() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16">
           <div className="md:col-span-4">
             <Link href="/dhronetech" className="flex items-center gap-2 mb-8" aria-label="DhroneTech Solutions Home">
-              <LogoMark size="lg" />
+              <LogoMark size="lg" tone="onDark" />
             </Link>
             <p className="text-[var(--dt-text-muted)] text-base leading-relaxed max-w-xs">
               We build, manage and grow digital solutions that help businesses operate smarter, compete better and achieve more.

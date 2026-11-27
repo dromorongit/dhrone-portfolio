@@ -3,14 +3,33 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
-export default function LogoMark({ className = '', size = 'default' }: { className?: string; size?: 'default' | 'sm' | 'lg' }) {
-  const [logoExists, setLogoExists] = useState(false)
+export default function LogoMark({
+  className = '',
+  size = 'default',
+  tone = 'onDark',
+}: {
+  className?: string
+  size?: 'default' | 'sm' | 'lg'
+  tone?: 'onLight' | 'onDark'
+}) {
+  const [logoSrc, setLogoSrc] = useState<string | null>(null)
 
   useEffect(() => {
-    const img = document.createElement('img')
-    img.onload = () => setLogoExists(true)
-    img.onerror = () => setLogoExists(false)
-    img.src = '/images/dhronetech/logo.svg'
+    const candidates = ['/images/dhronetech/logo.svg', '/images/dhronetech/logo.webp']
+    let cancelled = false
+    const tryNext = (i: number) => {
+      if (i >= candidates.length) return
+      const img = document.createElement('img')
+      img.onload = () => {
+        if (!cancelled) setLogoSrc(candidates[i])
+      }
+      img.onerror = () => tryNext(i + 1)
+      img.src = candidates[i]
+    }
+    tryNext(0)
+    return () => {
+      cancelled = true
+    }
   }, [])
 
   const sizeClasses = {
@@ -25,10 +44,10 @@ export default function LogoMark({ className = '', size = 'default' }: { classNa
     lg: 'text-xl',
   }
 
-  if (logoExists) {
+  if (logoSrc) {
     return (
       <Image
-        src="/images/dhronetech/logo.svg"
+        src={logoSrc}
         alt="DhroneTech Solutions"
         width={size === 'sm' ? 24 : size === 'lg' ? 40 : 32}
         height={size === 'sm' ? 24 : size === 'lg' ? 40 : 32}
@@ -37,6 +56,9 @@ export default function LogoMark({ className = '', size = 'default' }: { classNa
       />
     )
   }
+
+  const wordmarkColor = tone === 'onLight' ? 'text-[var(--dt-navy-900)]' : 'text-white'
+  const solutionsColor = tone === 'onLight' ? 'text-[var(--dt-blue-500)]' : 'text-[var(--dt-gold-500)]'
 
   return (
     <div className={`flex items-center gap-2 ${className}`}>
@@ -65,16 +87,18 @@ export default function LogoMark({ className = '', size = 'default' }: { classNa
         </svg>
       </div>
       <div className="flex flex-col leading-tight">
-        <span className={`font-extrabold tracking-tight text-white ${textSizeClasses[size]}`}>
+        <span className={`font-extrabold tracking-tight ${wordmarkColor} ${textSizeClasses[size]}`}>
           DHRONE TECH
         </span>
-        <span className={`font-semibold tracking-wider text-[var(--dt-gold-500)] text-xs`}>
+        <span className={`font-semibold tracking-wider text-xs ${solutionsColor}`}>
           SOLUTIONS
         </span>
       </div>
-      <span className="hidden sm:block font-medium tracking-widest text-[var(--dt-gold-400)] text-xs border-l border-[var(--dt-gold-500)]/30 pl-2 ml-1">
-        INNOVATE &bull; BUILD &bull; TRANSFORM
-      </span>
+      {tone === 'onDark' && (
+        <span className="hidden sm:block font-medium tracking-widest text-[var(--dt-gold-400)] text-xs border-l border-[var(--dt-gold-500)]/30 pl-2 ml-1">
+          INNOVATE &bull; BUILD &bull; TRANSFORM
+        </span>
+      )}
     </div>
   )
 }

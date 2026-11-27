@@ -15,8 +15,8 @@ export default function AboutSection() {
     >
       <div className="dt-container-lg">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          <div className="lg:col-span-5 relative">
-            <div className="aspect-[4/3.5] min-h-[320px] rounded-r-3xl overflow-hidden lg:rounded-r-3xl lg:rounded-l-none">
+          <div className="lg:col-span-5 relative min-w-0 w-full">
+            <div className="aspect-[4/3.5] min-h-[320px] rounded-3xl overflow-hidden w-full">
               <Image
                 src={assets.building}
                 alt="DhroneTech Solutions headquarters building"
@@ -28,7 +28,7 @@ export default function AboutSection() {
             </div>
           </div>
 
-          <div className="lg:col-span-4 lg:col-start-6 pt-8 lg:pt-0">
+          <div className="lg:col-span-4 lg:col-start-6 pt-8 lg:pt-0 min-w-0 w-full">
             <p className="dt-eyebrow">{about.eyebrow}</p>
             <h2 id="about-title" className="dt-h2 mb-6">{about.h2}</h2>
             <p className="dt-p mb-8">{about.paragraph}</p>
@@ -41,7 +41,7 @@ export default function AboutSection() {
             </Link>
           </div>
 
-          <div className="lg:col-span-3 lg:col-start-10">
+          <div className="lg:col-span-3 lg:col-start-10 min-w-0 w-full">
             <div className="dt-card p-8 lg:p-10 bg-[var(--dt-surface-light)] border-blue-500/10 sticky top-24" style={{ maxHeight: 'fit-content' }}>
               <h3 className="text-xl font-bold text-[var(--dt-text-dark)] mb-8">{about.whyChoose.title}</h3>
               <div className="space-y-2">
@@ -67,3 +67,4 @@ export default function AboutSection() {
     </section>
   )
 }
+

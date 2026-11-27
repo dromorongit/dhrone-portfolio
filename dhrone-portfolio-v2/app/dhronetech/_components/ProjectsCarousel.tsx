@@ -53,6 +53,20 @@ export default function ProjectsCarousel() {
     }
   }, [maxIndex, projectData.length])
 
+  useEffect(() => {
+    const el = carouselRef.current
+    if (!el) return
+    const handleScroll = () => {
+      const cardWidth = el.scrollWidth / projectData.length
+      if (cardWidth <= 0) return
+      const idx = Math.round(el.scrollLeft / cardWidth)
+      const clamped = Math.max(0, Math.min(idx, maxIndex))
+      setCurrentIndex(clamped)
+    }
+    el.addEventListener('scroll', handleScroll, { passive: true })
+    return () => el.removeEventListener('scroll', handleScroll)
+  }, [projectData.length, maxIndex])
+
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'ArrowLeft') {
       e.preventDefault()
@@ -73,7 +87,7 @@ export default function ProjectsCarousel() {
     >
       <div className="dt-container-lg">
         <div className="grid lg:grid-cols-[1fr_2fr] gap-12 lg:gap-16 items-start">
-          <div className="max-w-lg">
+          <div className="w-full max-w-lg min-w-0">
             <p className="dt-eyebrow">{projectsSection.eyebrow}</p>
             <h2 id="projects-title" className="dt-h1 mb-6">
               {projectsSection.h2[0]} <br />
@@ -105,7 +119,7 @@ export default function ProjectsCarousel() {
                 <Link
                   key={project.slug}
                   href={`/projects/${project.slug}`}
-                  className="dt-card-glass dt-project-card flex-shrink-0 scroll-snap-start flex flex-col"
+                  className="dt-card-glass flex-shrink-0 scroll-snap-start flex flex-col rounded-3xl overflow-hidden transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--dt-gold-500)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--dt-navy-900)]"
                   style={{
                     width: `calc(100% / ${cardsPerView} - ${cardsPerView > 1 ? '1rem' : '0'})`,
                     minWidth: '280px',
@@ -121,24 +135,25 @@ export default function ProjectsCarousel() {
                       className="object-cover"
                       loading="lazy"
                     />
-                    <div className="dt-project-overlay">
-                      <h3 className="dt-project-title">{project.title}</h3>
-                      <p className="dt-project-label">{project.label}</p>
-                    </div>
                   </div>
-                  <div className="flex items-center justify-end p-4 border-t border-white/10">
-                    <button
-                      className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
-                      aria-label={`View ${project.title}`}
-                    >
+                  <div className="flex items-center justify-between gap-4 p-4 bg-[rgba(6,18,46,0.7)] backdrop-blur-md border-t border-white/10">
+                    <div className="min-w-0">
+                      <h3 className="text-white text-[17px] font-semibold truncate">
+                        {project.title}
+                      </h3>
+                      <p className="text-[#9BB5FF] text-[13px] truncate">
+                        {project.label}
+                      </p>
+                    </div>
+                    <span className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors flex-shrink-0">
                       <FiArrowRight size={18} />
-                    </button>
+                    </span>
                   </div>
                 </Link>
               ))}
             </div>
 
-            <div className="absolute bottom-0 right-0 lg:bottom-0 lg:right-0 flex items-center gap-4" aria-hidden="true">
+            <div className="flex items-center justify-between gap-4 mt-4">
               <div className="flex gap-1.5" role="tablist" aria-label="Project pagination">
                 {projectData.slice(0, maxIndex + 1).map((__, index) => (
                   <button
@@ -151,24 +166,26 @@ export default function ProjectsCarousel() {
                   />
                 ))}
               </div>
-              <button
-                onClick={() => scrollToIndex(currentIndex - 1)}
-                disabled={currentIndex === 0}
-                className="dt-carousel-arrow"
-                aria-label="Previous project"
-                aria-disabled={currentIndex === 0}
-              >
-                <FiChevronLeft size={18} />
-              </button>
-              <button
-                onClick={() => scrollToIndex(currentIndex + 1)}
-                disabled={currentIndex >= maxIndex}
-                className="dt-carousel-arrow"
-                aria-label="Next project"
-                aria-disabled={currentIndex >= maxIndex}
-              >
-                <FiChevronRight size={18} />
-              </button>
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={() => scrollToIndex(currentIndex - 1)}
+                  disabled={currentIndex === 0}
+                  className="dt-carousel-arrow"
+                  aria-label="Previous project"
+                  aria-disabled={currentIndex === 0}
+                >
+                  <FiChevronLeft size={18} />
+                </button>
+                <button
+                  onClick={() => scrollToIndex(currentIndex + 1)}
+                  disabled={currentIndex >= maxIndex}
+                  className="dt-carousel-arrow"
+                  aria-label="Next project"
+                  aria-disabled={currentIndex >= maxIndex}
+                >
+                  <FiChevronRight size={18} />
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -176,3 +193,5 @@ export default function ProjectsCarousel() {
     </section>
   )
 }
+
+
