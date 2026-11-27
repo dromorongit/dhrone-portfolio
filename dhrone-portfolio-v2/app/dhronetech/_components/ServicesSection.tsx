@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { FiArrowRight, FiCode, FiSmartphone, FiMonitor, FiDatabase, FiMessageSquare, FiVideo, FiAward } from 'react-icons/fi'
+import { FiArrowRight, FiCode, FiSmartphone, FiMonitor, FiDatabase, FiVideo } from 'react-icons/fi'
+import { FaBullhorn, FaGraduationCap } from 'react-icons/fa'
 import { dhronetechContent } from '@/app/data/dhronetech'
 
 const serviceIcons = {
@@ -7,9 +8,9 @@ const serviceIcons = {
   smartphone: FiSmartphone,
   laptop: FiMonitor,
   'bar-chart': FiDatabase,
-  megaphone: FiMessageSquare,
+  megaphone: FaBullhorn,
   video: FiVideo,
-  'graduation-cap': FiAward,
+  'graduation-cap': FaGraduationCap,
 }
 
 const iconColorClasses = {
