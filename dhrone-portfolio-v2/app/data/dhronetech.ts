@@ -5,7 +5,7 @@ export interface DhronetechContent {
     paragraph: string
     primaryCta: { label: string; href: string }
     secondaryCta: { label: string; href: string }
-    trustBadges: Array<{ label: string; icon: string }>
+    trustBadges: Array<{ label: string[]; icon: string }>
   }
   services: {
     eyebrow: string
@@ -69,15 +69,15 @@ export interface DhronetechContent {
 export const dhronetechContent: DhronetechContent = {
   hero: {
     eyebrow: 'DHRONETECH SOLUTIONS',
-    h1: ['Your Vision.', 'Our Technology.'],
+    h1: ['Your Vision.', 'Technology.'],
     paragraph: 'We build, manage and grow digital solutions that help businesses operate smarter, compete better and achieve more.',
     primaryCta: { label: "Explore Our Services", href: '#services' },
     secondaryCta: { label: 'About Us', href: '#about' },
     trustBadges: [
-      { label: 'Innovative Solutions', icon: 'rocket' },
-      { label: 'Reliable Partner', icon: 'shield-check' },
-      { label: 'Client Focused', icon: 'users' },
-      { label: 'Results Driven', icon: 'bar-chart' },
+      { label: ['Innovative', 'Solutions'], icon: 'rocket' },
+      { label: ['Reliable', 'Partner'], icon: 'shield-check' },
+      { label: ['Client Focused'], icon: 'users' },
+      { label: ['Results Driven'], icon: 'bar-chart' },
     ],
   },
   services: {

@@ -16,6 +16,8 @@
   font-family: var(--font-plus-jakarta), 'Plus Jakarta Sans', sans-serif;
   background-color: var(--dt-navy-900);
   color: var(--dt-white);
+  --dt-header-h: clamp(80px, 8.4vw, 112px);
+  --dt-gutter: clamp(20px, 5.6vw, 96px);
 }
 
 .dt * {
@@ -45,9 +47,9 @@
 }
 
 .dt-container-lg {
-  max-width: 100%;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 var(--dt-gutter);
 }
 
 .dt-section {
@@ -239,28 +241,6 @@
 .dt-icon-circle-orange {
   background: rgba(249, 115, 22, 0.12);
   color: #F97316;
-}
-
-.dt-trust-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 9999px;
-  font-size: 0.875rem;
-  color: var(--dt-white);
-  transition: border-color 0.2s ease, background-color 0.2s ease;
-}
-
-.dt-trust-badge:hover {
-  border-color: var(--dt-gold-500);
-  background: rgba(245, 185, 33, 0.1);
-}
-
-.dt-trust-badge svg {
-  width: 1.25rem;
-  height: 1.25rem;
 }
 
 .dt-service-tile {
@@ -514,6 +494,159 @@
 
 .dt-text-balance {
   text-wrap: balance;
+}
+
+/* Hero */
+.dt-hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 20px 0;
+}
+
+.dt-hero-eyebrow-line {
+  width: 120px;
+  height: 1px;
+  background: rgba(147, 180, 255, 0.7);
+  flex-shrink: 0;
+}
+
+.dt-hero-h1 {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--dt-white);
+  margin: 0 0 24px 0;
+}
+
+.dt-hero-h1-gold {
+  color: var(--dt-gold-500);
+}
+
+.dt-hero-p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  line-height: 1.6;
+  margin: 0 0 28px 0;
+}
+
+.dt-hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.dt-hero-btn-explore {
+  background: linear-gradient(135deg, #F5B921, #FFCB45);
+  color: #0B1530;
+  padding-inline: 32px;
+  box-shadow: 0 0 16px rgba(245, 185, 33, 0.5);
+}
+
+.dt-hero-btn-about {
+  background: transparent;
+  border: 1.5px solid #fff;
+  color: #fff;
+  padding-left: 28px;
+  padding-right: 10px;
+}
+
+.dt-hero-play-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+/* Trust badges */
+.dt-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(20px, 3.4vw, 44px);
+}
+
+.dt-badge-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.dt-badge-icon {
+  width: 24px;
+  height: 24px;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.dt-badge-label {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.dt-badge-label.single {
+  white-space: nowrap;
+}
+
+.dt-badge-label span {
+  display: block;
+}
+
+/* Header nav active underline */
+.dt-nav-link-active {
+  position: relative;
+}
+
+.dt-nav-link-active::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 24px;
+  height: 2px;
+  background: #1F5BFF;
+  border-radius: 1px;
+}
+
+.dt-header-logo {
+  width: auto;
+  height: calc(var(--dt-header-h) * 0.62);
+  display: block;
+}
+
+@media (max-width: 1279px) {
+  .dt-header-logo {
+    height: 40px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .dt-badges {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-image {
+    object-position: 70% 25%;
+  }
+}
+
+.hero-image {
+  object-position: right 25%;
 }
 
 
